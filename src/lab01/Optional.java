@@ -1,63 +1,34 @@
-package Lab01;
+// Author: Mutu Gheorghita
+// command line: java -cp "C:\Users\ghita\Documents\java-pa-homeworks\out\production\java-pa-homeworks"  Source 15
+
+package lab01;
 
 public class Optional {
+    private int[][] square;
 
     public void run(String[] args) {
         long startTime = System.nanoTime();
 
         int squareSize = Integer.parseInt(args[0]);
-        int[][] square = new int[squareSize][squareSize];
-
-        for (int index = 0; index < squareSize; index++) {
-            for (int j = 0; j < squareSize; j++) {
-                square[index][j] = squareSize * ((index + j + 1 + squareSize / 2) % squareSize) + (index + 2 * j + 1) % squareSize + 1;
-            }
-        }
-
-        int magicConstant = squareSize * (squareSize * squareSize + 1) / 2;
-
-        for (int columnIndex = 0; columnIndex < squareSize; columnIndex++) {
-            int columnSum = 0;
-            for (int elemIndex = 0; elemIndex < squareSize; elemIndex++) {
-                columnSum += square[columnIndex][elemIndex];
-            }
-            if (magicConstant != columnSum) {
-                System.out.println("Invalid square!");
-                System.exit(0);
-            }
-        }
-
-        for (int rowIndex = 0; rowIndex < squareSize; rowIndex++) {
-            int rowSum = 0;
-            for (int elemIndex = 0; elemIndex < squareSize; elemIndex++) {
-                rowSum += square[elemIndex][rowIndex];
-            }
-            if (magicConstant != rowSum) {
-                System.out.println("Invalid square!");
-                System.exit(0);
-            }
-        }
-
-        int pDiag = 0, sDiag = 0;
-
-        for (int i = 0; i < squareSize; i++) {
-            for (int j = 0; j < squareSize; j++) {
-
-                // primary diagonal
-                if (i == j) {
-                    pDiag += square[i][j];
-                }
-
-                // secondary diagonal
-                if (i == squareSize - j - 1) {
-                    sDiag += square[i][j];
-                }
-            }
-        }
-
-        if (pDiag != magicConstant || sDiag != magicConstant) {
-            System.out.println("Invalid square!");
+        if(squareSize % 2 == 0){
+            System.out.println("Square size must be odd!");
             System.exit(0);
+        }
+        this.square = new int[squareSize][squareSize];
+
+        int row = squareSize - 1;
+        int col = squareSize / 2;
+        square[row][col] = 1;
+
+        for(int i = 2; i <= squareSize * squareSize; i++){
+            if(square[(row + 1) % squareSize][(col + 1) % squareSize] == 0){
+                row = (row + 1) % squareSize;
+                col = (col + 1) % squareSize;
+            }
+            else {
+                row = (row - 1 + squareSize) % squareSize;
+            }
+            square[row][col] = i;
         }
 
         int maxSquareSizePrint = 20;
@@ -67,9 +38,9 @@ public class Optional {
                 for (int j = 0; j < squareSize; j++) {
                     System.out.print(Character.toString((char) (unicodeConstant + square[i][j])) + " ");
                 }
-                System.out.println("");
+                System.out.println();
             }
-            System.out.println("\n");
+            System.out.println();
         } else System.out.println("Square size too big to be printed!");
 
         long endTime = System.nanoTime();

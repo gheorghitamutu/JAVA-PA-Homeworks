@@ -1,4 +1,6 @@
-package Lab01;
+// Author: Mutu Gheorghita
+
+package lab01;
 
 public class Compulsory {
     private String[] languages = new String[]{
