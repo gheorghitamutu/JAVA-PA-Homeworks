@@ -1,16 +1,53 @@
-package com.main;
+/*
+    Author: Mutu Gheorghita
+*/
 
-import java.util.Vector;
+package lab02;
 
-public class Student extends Person{
+import java.util.List;
 
-    private Vector<Project> projects = new Vector<>();
+public class Student extends Person {
 
-    public Student(String pName, String pEmail){
-        super(pName, pEmail);
+    private List<Project> projects;
+    private Project assignedProject;
+
+    public Student(String name, String email) {
+        super(name, email);
     }
 
-    public void setPreferences(Vector<Project> projects){
+    public void setPreferences(List<Project> projects) {
         this.projects = projects;
+    }
+
+    public String toString() {
+        StringBuilder preferences = new StringBuilder();
+        preferences.append(this.getName());
+        preferences.append(": (");
+        for (int index = 0; index < projects.size(); index++) {
+            preferences.append(projects.get(index).getName());
+            if (index != projects.size() - 1) {
+                preferences.append(", ");
+            } else {
+                preferences.append(")");
+            }
+        }
+        return preferences.toString();
+    }
+
+    public Project getAssignedProject() {
+        return this.assignedProject;
+    }
+
+    public void setAssignedProject(Project project) {
+        this.assignedProject = project;
+    }
+
+    public List<Project> getPreferences() {
+        return this.projects;
+    }
+
+    @Override
+    public boolean isFree() {
+        return (assignedProject == null);
     }
 }
