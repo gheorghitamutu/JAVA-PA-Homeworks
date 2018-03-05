@@ -2,8 +2,6 @@
     Author: Mutu Gheorghita
 */
 
-import lab03.ProblemGenerator;
-
 public class Source {
 
     /* Lab 02
@@ -88,8 +86,15 @@ public class Source {
         System.out.println("The best random portofolio in ascending order: " + solution);
         */
 
+        /* Lab 03 Bonus
         ProblemGenerator pg = new ProblemGenerator();
-        pg.generateProblem(5000, 10000, 6, 5);
-        pg.solveProblem(2000);
+        long startTime = System.nanoTime();
+        pg.generateProblem(5000000, 10000000, 70, 50);
+        pg.solveProblem(20000);
+        long endTime = System.nanoTime();
+        long totalTime = endTime - startTime;
+        double seconds = (double) totalTime / 1000000000.0;
+        System.out.println("Bonus part of Lab 03 took " + seconds + "!");
+        */
     }
 }

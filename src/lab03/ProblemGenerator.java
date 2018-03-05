@@ -49,7 +49,7 @@ public class ProblemGenerator {
 
     public void solveProblem(int maxPortofolioValue) {
         if (maxPortofolioValue < 1) {
-            System.out.println("You can't have a potofolio with less than 1 value!");
+            System.out.println("You can't have a potofolio with less than 1 as value!");
             System.exit(0);
         }
 
@@ -64,10 +64,10 @@ public class ProblemGenerator {
         }
 
         Portofolio solution = manager.createPortofolio(new GreedyAlgorithm(), maxPortofolioValue);
-        System.out.println("The best greedy portofolio in descending order: " + solution);
+        System.out.println("The greedy portofolio in descending order: " + solution);
 
         solution = manager.createPortofolio(new RandomAlgorithm(), maxPortofolioValue);
-        System.out.println("The best random portofolio in ascending order: " + solution);
+        System.out.println("The random portofolio in ascending order: " + solution);
     }
 
     private int generateInt(int min, int max) {
