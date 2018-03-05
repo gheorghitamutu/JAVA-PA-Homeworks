@@ -2,7 +2,7 @@
     Author: Mutu Gheorghita
 */
 
-import lab02.*;
+import lab03.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,6 +10,7 @@ import java.util.Collections;
 
 public class Source {
 
+    /* Lab 02
     private static Problem example() {
         Problem problem = new Problem();
 
@@ -42,6 +43,7 @@ public class Source {
 
         return problem;
     }
+    */
 
     public static void main(String[] args) {
         /* Lab 01
@@ -53,6 +55,7 @@ public class Source {
         adv.run(5);
         */
 
+        /* Lab 02
         Problem problem = example();
         Solver optimalSolver = new StabilStudentSolver(problem);
         optimalSolver.solve();
@@ -61,6 +64,32 @@ public class Source {
         Solver randomSolver = new RandomStudentSolver(problem);
         randomSolver.solve();
         System.out.println(randomSolver.printResult());
+        */
+
+        /* Lab 03 */
+        Building h1 = new Building("House 1", 27, 9);
+        Building h2 = new Building("House 2", 36, 9);
+        Building h3 = new Building("House 3", 45, 9);
+
+        Vehicle c1 = new Vehicle("Car 1", 8, 4);
+        Vehicle c2 = new Vehicle("Car 2", 12, 4);
+
+        Jewel ring = new Jewel("Ring", 2);
+
+        AssetManager manager = new AssetManager();
+        manager.add(new ArrayList<>(Arrays.asList(h1, h2, h3)));
+        manager.add(new ArrayList<>(Arrays.asList(c1, c2)));
+        manager.add(new ArrayList<>(Collections.singletonList(ring)));
+
+        System.out.println("Items sorted by the name: " + manager.getItems());
+        System.out.println("Assets sorted in ascending order by the profit: " + manager.getAssets());
+
+        int maxValue = 10;
+        Portofolio solution = manager.createPortofolio(new GreedyAlgorithm(), maxValue);
+        System.out.println("The best greedy portofolio in descending order: " + solution);
+
+        solution = manager.createPortofolio(new RandomAlgorithm(), maxValue);
+        System.out.println("The best random portofolio in ascending order: " + solution);
 
     }
 }
