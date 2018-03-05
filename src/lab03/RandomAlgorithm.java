@@ -13,7 +13,7 @@ public class RandomAlgorithm implements Algorithm {
 
         for (Item item : items) {
             sum += item.getProfit();
-            if (sum < maxValue) {
+            if (sum <= maxValue) {
                 maxItems.add(item);
             } else {
                 sum -= item.getProfit();

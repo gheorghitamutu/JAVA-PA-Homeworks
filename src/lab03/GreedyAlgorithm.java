@@ -11,7 +11,7 @@ public class GreedyAlgorithm implements Algorithm {
         List<Item> reverseSortedItems = sortReverseItems(items);
         for(Item item: reverseSortedItems){
             sum += item.getProfit();
-            if(sum < maxValue) {
+            if(sum <= maxValue) {
                 maxItems.add(item);
             }
             else{

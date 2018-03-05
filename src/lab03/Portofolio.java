@@ -11,6 +11,11 @@ public class Portofolio {
 
     @Override
     public String toString(){
-        return items.toString();
+        if(items.size() < 20) {
+            return items.toString();
+        }
+        else{
+            return "There are " + Integer.toString(items.size()) + " items!";
+        }
     }
 }

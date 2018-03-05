@@ -2,11 +2,7 @@
     Author: Mutu Gheorghita
 */
 
-import lab03.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import lab03.ProblemGenerator;
 
 public class Source {
 
@@ -66,7 +62,7 @@ public class Source {
         System.out.println(randomSolver.printResult());
         */
 
-        /* Lab 03 */
+        /* Lab 03
         Building h1 = new Building("House 1", 27, 9);
         Building h2 = new Building("House 2", 36, 9);
         Building h3 = new Building("House 3", 45, 9);
@@ -90,6 +86,10 @@ public class Source {
 
         solution = manager.createPortofolio(new RandomAlgorithm(), maxValue);
         System.out.println("The best random portofolio in ascending order: " + solution);
+        */
 
+        ProblemGenerator pg = new ProblemGenerator();
+        pg.generateProblem(5000, 10000, 6, 5);
+        pg.solveProblem(2000);
     }
 }

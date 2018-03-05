@@ -49,7 +49,7 @@ public class Item {
 
     @Override
     public String toString(){
-        return this.name;
+        return this.name + " with profit " + Float.toString(getProfit());
     }
 
     public float getProfit(){
