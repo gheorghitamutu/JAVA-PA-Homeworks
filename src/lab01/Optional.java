@@ -4,7 +4,6 @@
 package lab01;
 
 public class Optional {
-    private int[][] square;
 
     public void run(String[] args) {
         long startTime = System.nanoTime();
@@ -14,7 +13,7 @@ public class Optional {
             System.out.println("Square size must be odd!");
             System.exit(0);
         }
-        this.square = new int[squareSize][squareSize];
+        int[][] square = new int[squareSize][squareSize];
 
         int row = squareSize - 1;
         int col = squareSize / 2;

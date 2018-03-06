@@ -1,3 +1,7 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab02;
 
 import java.util.List;

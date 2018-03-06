@@ -1,7 +1,11 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab03;
 
-public class Jewel extends Item {
-    public Jewel(String name, int price){
+class Jewel extends Item {
+    Jewel(String name, int price){
         super(name, price);
     }
 }

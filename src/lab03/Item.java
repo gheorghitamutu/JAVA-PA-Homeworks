@@ -1,3 +1,7 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab03;
 
 public class Item {
@@ -15,12 +19,6 @@ public class Item {
         this.name = name;
         this.price = price;
         this.value = 0;
-    }
-
-    Item(){
-        this.name = null;
-        this.value = 0;
-        this.price = 0;
     }
 
     public void setValue(int value){

@@ -1,9 +1,13 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab02;
 
 public abstract class Solver {
-    protected Problem problem;
+    Problem problem;
 
-    public Solver(Problem problem) {
+    Solver(Problem problem) {
         this.problem = problem;
     }
 

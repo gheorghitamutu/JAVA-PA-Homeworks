@@ -1,3 +1,7 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab03;
 
 public class Vehicle extends Item implements Asset {
@@ -15,7 +19,7 @@ public class Vehicle extends Item implements Asset {
         return computeProfit();
     }
 
-    public Vehicle(String name, int value, int price) {
+    Vehicle(String name, int value, int price) {
         super(name, value, price);
     }
 }

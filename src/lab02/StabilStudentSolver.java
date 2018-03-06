@@ -1,5 +1,9 @@
 package lab02;
 
+/*
+    Author: Mutu Gheorghita
+*/
+
 import java.util.ArrayList;
 import java.util.List;
 

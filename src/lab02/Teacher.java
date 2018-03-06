@@ -70,7 +70,6 @@ public class Teacher extends Person {
             sb.append(student.getName());
             first = false;
         }
-        sb.append(".\n");
         return sb.toString();
     }
 

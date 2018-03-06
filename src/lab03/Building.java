@@ -1,3 +1,7 @@
+/*
+    Author: Mutu Gheorghita
+*/
+
 package lab03;
 
 public class Building extends Item implements Asset {
