@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="lab04:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/lab04_jar</output-path>
+    <root id="archive" name="lab04.jar">
+      <element id="module-output" name="java-pa-homeworks" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/choco-solver-4.0.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
