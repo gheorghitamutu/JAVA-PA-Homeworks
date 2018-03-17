@@ -5,6 +5,8 @@
 package lab04;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,6 +30,8 @@ public class Item implements Serializable {
     }
 
     public Integer getYear() {
+        if(year == null)
+            return 0;
         return year;
     }
 
@@ -45,7 +49,7 @@ public class Item implements Serializable {
 
     private String title;
     private String path;
-    private Integer year;
+    private Integer year = null;
     private List<String> authors = new ArrayList<>();
 
     Item(String title, String path, Integer year, String... authors) {
@@ -66,11 +70,16 @@ public class Item implements Serializable {
         try {
             if (title == null || title.equals("")) throw new CustomException("Title not valid!");
             if (year == null || year < 0) throw new CustomException("Year not valid!");
-            if (path == null || !(new File(path).exists())) throw new CustomException("Path not valid!");
+            if (path == null) throw new CustomException("Path not valid!");
+            File file = new File(path);
+            file.createNewFile(); // if file already exists will do nothing
+            FileOutputStream oFile = new FileOutputStream(file, false);
+            oFile.close();
+
             for(String author: authors)
                 if (author == null || author.equals("")) throw new CustomException("Author not valid!");
         }
-        catch (CustomException CE){
+        catch (CustomException | IOException CE){
             System.out.println(CE.getMessage() + " Exiting program...");
             System.exit(0);
         }

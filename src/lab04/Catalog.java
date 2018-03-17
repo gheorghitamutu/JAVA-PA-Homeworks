@@ -12,6 +12,33 @@ import java.util.List;
 public class Catalog implements Serializable {
     private List<Item> items = new ArrayList<>();
 
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(String developer) {
+        this.developer = developer;
+    }
+
+    private String name = this.getClass().getName();
+    private String developer = "gmutu";
+
     public void add(Item item){
         items.add(item);
     }
@@ -52,6 +79,7 @@ public class Catalog implements Serializable {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(object);
             fileOutputStream.close();
+            objectOutputStream.close();
             System.out.println(String.format("SERIALIZED [%s]: %s", object.getClass().getName(), object));
         } catch (IOException exception) {
             // Output unexpected IOException.
