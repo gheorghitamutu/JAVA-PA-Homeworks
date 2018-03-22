@@ -15,7 +15,7 @@ public class HTMLReport implements Report {
     private Catalog catalog;
     private String reportPath;
 
-    HTMLReport(Catalog catalog, String reportPath){
+    HTMLReport(Catalog catalog, String reportPath) {
         this.catalog = catalog;
         this.reportPath = reportPath;
     }

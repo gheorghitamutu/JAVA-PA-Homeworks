@@ -36,6 +36,10 @@ public class Source {
         //ArrayList<String> UI = new ArrayList<>(Arrays.asList("save \"resources\\\\lab04\\\\catalogs\\\\catalog.dat\"".split(" \"")));
         //new SaveCommand(catalog).execute(UI);
 
+        //ArrayList<String> UI = new ArrayList<>(Arrays.asList("report docx \"resources\\lab04\\reports\\docxreports\\report.docx\"".split(" \"")));
+        //        //new ReportCommand(catalog).execute(UI);
+        //System.exit(0);
+
         Scanner scan = new Scanner(System.in);
         ArrayList<String> userInput = new ArrayList<>(Arrays.asList(scan.nextLine().split(" \"")));
         while (!userInput.get(0).split(" ")[0].equals("exit")){

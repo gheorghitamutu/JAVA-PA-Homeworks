@@ -7,30 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5dee3a7-b2d3-4a10-b3dc-9c7d98d2c63f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/freemarker_freemarker_2_3_8.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/lab04/books/test.ps" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/lab04/catalogtemplates/cataloghtml.ftl" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/resources/lab04/reports/htmlreports/report.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/AddCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/Command.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/HTMLReport.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/InfoCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/ListCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/LoadCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/OpenCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/Report.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/ReportCommand.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/SaveCommand.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_choco_solver_choco_samples_3_3_3.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/net_sourceforge_dynamicreports_dynamicreports_adhoc_5_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/net_sourceforge_dynamicreports_dynamicreports_adhoc_5_1_01.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_poi_poi_3_17.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab04/DynamicReport.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/java-pa-homeworks.iml" afterPath="$PROJECT_DIR$/java-pa-homeworks.iml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/lab04_jar/lab04.jar" afterPath="$PROJECT_DIR$/out/artifacts/lab04_jar/lab04.jar" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Catalog.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Catalog.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Item.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Item.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/ReportCommand.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/ReportCommand.class" />
       <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Source.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab04/Source.class" />
-      <change beforePath="$PROJECT_DIR$/resources/lab04/catalogs/catalog.dat" afterPath="$PROJECT_DIR$/resources/lab04/catalogs/catalog.dat" />
-      <change beforePath="$PROJECT_DIR$/src/lab04/Catalog.java" afterPath="$PROJECT_DIR$/src/lab04/Catalog.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab04/HTMLReport.java" afterPath="$PROJECT_DIR$/src/lab04/HTMLReport.java" />
       <change beforePath="$PROJECT_DIR$/src/lab04/Item.java" afterPath="$PROJECT_DIR$/src/lab04/Item.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab04/ReportCommand.java" afterPath="$PROJECT_DIR$/src/lab04/ReportCommand.java" />
       <change beforePath="$PROJECT_DIR$/src/lab04/Source.java" afterPath="$PROJECT_DIR$/src/lab04/Source.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,8 +41,31 @@
       <file leaf-file-name="Source.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lab04/Source.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+            <state relative-caret-position="346">
+              <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReportCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab04/ReportCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+              <folding>
+                <element signature="e#156#157#0" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DynamicReport.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab04/DynamicReport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,123 +73,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/LoadCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#446#447#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/SaveCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/Catalog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="80" column="36" lean-forward="false" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
-              <folding>
-                <element signature="e#271#272#0" expanded="true" />
-                <element signature="e#299#300#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-                <element signature="e#627#628#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/AddCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#150#151#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Article.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/Article.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-              <folding>
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#201#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTMLReport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/HTMLReport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab04/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="124">
+              <caret line="54" column="70" lean-forward="false" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/ListCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
-              <folding>
-                <element signature="e#151#152#0" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab04/InfoCommand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-              <folding>
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#347#348#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -200,6 +101,7 @@
       <find>model</find>
       <find>open</find>
       <find>load</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,8 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Lab01/Optional.java" />
-        <option value="$PROJECT_DIR$/src/main.java" />
         <option value="$PROJECT_DIR$/src/Lab01/Compulsory.java" />
         <option value="$PROJECT_DIR$/src/source.java" />
         <option value="$PROJECT_DIR$/src/lab01/Compulsory.java" />
@@ -253,8 +153,6 @@
         <option value="$PROJECT_DIR$/src/lab04/Report.java" />
         <option value="$PROJECT_DIR$/resources/lab04/catalogtemplates/cataloghtml.ftl" />
         <option value="$PROJECT_DIR$/resources/lab04/htmlreports/report.html" />
-        <option value="$PROJECT_DIR$/src/lab04/HTMLReport.java" />
-        <option value="$PROJECT_DIR$/src/lab04/ReportCommand.java" />
         <option value="$PROJECT_DIR$/src/lab01/Optional.java" />
         <option value="$PROJECT_DIR$/src/lab04/ListCommand.java" />
         <option value="$PROJECT_DIR$/src/lab04/OpenCommand.java" />
@@ -262,8 +160,12 @@
         <option value="$PROJECT_DIR$/src/lab04/LoadCommand.java" />
         <option value="$PROJECT_DIR$/src/lab04/InfoCommand.java" />
         <option value="$PROJECT_DIR$/src/lab04/Catalog.java" />
-        <option value="$PROJECT_DIR$/src/lab04/Source.java" />
+        <option value="$PROJECT_DIR$/src/lab04/HTMLReport.java" />
+        <option value="$PROJECT_DIR$/src/lab04/PDFReport.java" />
+        <option value="$PROJECT_DIR$/src/lab04/ReportCommand.java" />
+        <option value="$PROJECT_DIR$/src/lab04/DynamicReport.java" />
         <option value="$PROJECT_DIR$/src/lab04/Item.java" />
+        <option value="$PROJECT_DIR$/src/lab04/Source.java" />
       </list>
     </option>
   </component>
@@ -274,8 +176,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -297,10 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -355,34 +252,20 @@
               <item name="java-pa-homeworks" type="b2602c69:ProjectViewProjectNode" />
               <item name="java-pa-homeworks" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lab01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-pa-homeworks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-pa-homeworks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lab02" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-pa-homeworks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-pa-homeworks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lab03" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java-pa-homeworks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java-pa-homeworks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lab04" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -395,13 +278,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ghita\Documents\java-pa-homeworks\src\lab02" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ghita\Documents\java-pa-homeworks\resources\lab04\reports" />
       <recent name="C:\Users\ghita\Documents\java-pa-homeworks\src\lab01" />
       <recent name="C:\Users\ghita\Documents\java-pa-homeworks" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ghita\Documents\java-pa-homeworks\src\lab02" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -615,12 +498,17 @@
       <workItem from="1521147549427" duration="913000" />
       <workItem from="1521181357700" duration="2830000" />
       <workItem from="1521274783885" duration="1469000" />
-      <workItem from="1521276289244" duration="1391000" />
+      <workItem from="1521276289244" duration="3279000" />
+      <workItem from="1521530654069" duration="320000" />
+      <workItem from="1521531352364" duration="599000" />
+      <workItem from="1521564701674" duration="29000" />
+      <workItem from="1521628141662" duration="1217000" />
+      <workItem from="1521705256190" duration="8924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36616000" />
+    <option name="totallyTimeSpent" value="49593000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -635,26 +523,26 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29782608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29782608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23400854" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16577825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39456522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39782608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -738,14 +626,8 @@
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/lab04/Source.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="51" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -759,70 +641,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lab04/test.txt" />
-    <entry file="file://$PROJECT_DIR$/resources/lab04/books/tacp.ps">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lab04/books/test.ps">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/CustomException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="58" lean-forward="false" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Manual.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="2" lean-forward="false" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/sun/nio/fs/AbstractPath.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Report.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/nio/file/Files.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -855,24 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="249" column="0" lean-forward="false" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lab04/reports/htmlreports/report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/ReportCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding>
-            <element signature="e#156#157#0" expanded="false" />
-            <element signature="e#194#195#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,10 +856,10 @@
         <state relative-caret-position="136">
           <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="false" />
+            <element signature="e#190#191#0" expanded="false" />
+            <element signature="e#240#241#0" expanded="false" />
+            <element signature="e#299#300#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,19 +869,19 @@
         <state relative-caret-position="85">
           <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="e#151#152#0" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="false" />
+            <element signature="e#189#190#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab04/InfoCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="544">
           <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
           <folding>
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="false" />
+            <element signature="e#347#348#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1091,30 +891,31 @@
         <state relative-caret-position="153">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#152#153#0" expanded="false" />
+            <element signature="e#190#191#0" expanded="false" />
+            <element signature="e#299#300#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Catalog.java">
+    <entry file="file://$PROJECT_DIR$/src/lab04/AddCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="80" column="36" lean-forward="false" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        <state relative-caret-position="714">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#271#272#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#150#151#0" expanded="false" />
+            <element signature="e#188#189#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab04/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="e#152#153#0" expanded="false" />
+            <element signature="e#201#202#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1122,58 +923,160 @@
     <entry file="file://$PROJECT_DIR$/src/lab04/LoadCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
-            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="false" />
+            <element signature="e#446#447#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/AddCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/lab04/CustomException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="153">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/report/builder/ReportBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="477" column="13" lean-forward="false" selection-start-line="477" selection-start-column="13" selection-end-line="477" selection-end-column="13" />
           <folding>
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
+            <element signature="e#14880#14881#0" expanded="false" />
+            <element signature="e#14912#14913#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lab04/reports/htmlreports/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab04/HTMLReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/report/builder/DynamicReports.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="e#4971#4972#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/base/export/AbstractJasperExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/base/export/AbstractJasperExcelExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#2924#2925#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/base/export/JasperXlsExporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/builder/export/Exporters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="179" column="0" lean-forward="false" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/builder/JasperReportBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="558" column="0" lean-forward="false" selection-start-line="558" selection-start-column="0" selection-end-line="558" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/dynamicreports-core-5.1.0-sources.jar!/net/sf/dynamicreports/jasper/builder/export/JasperXlsExporterBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#1375#1376#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab04/Catalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="method#save#0;class#Catalog#0" expanded="false" />
+            <element signature="method#load#0;class#Catalog#0" expanded="false" />
+            <element signature="method#Serialize#0;class#Catalog#0" expanded="false" />
+            <element signature="method#Deserialize#0;class#Catalog#0" expanded="false" />
+            <element signature="method#list#0;class#Catalog#0" expanded="false" />
+            <element signature="method#open#0;class#Catalog#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab04/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="124">
+          <caret line="54" column="70" lean-forward="false" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/Article.java">
+    <entry file="file://$PROJECT_DIR$/src/lab04/DynamicReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        <state relative-caret-position="459">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#201#202#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab04/HTMLReport.java">
+    <entry file="file://$PROJECT_DIR$/src/lab04/ReportCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="183">
+          <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+          <folding>
+            <element signature="e#156#157#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab04/Source.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="60" column="30" lean-forward="true" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="346">
+          <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1256,7 +1159,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>freemarker:freemarker:2.3.8</last-edited>
+          <last-edited>org.apache.poi:poi:3.17</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

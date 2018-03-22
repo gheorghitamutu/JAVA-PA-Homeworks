@@ -53,7 +53,9 @@ public class Item implements Serializable {
     private List<String> authors = new ArrayList<>();
 
     Item(String title, String path, Integer year, String... authors) {
-        this.path = path;
+        File file = new File(path);
+        this.path = file.getAbsolutePath();
+        this.title = title;
         this.year = year;
         this.title = title;
         this.authors.addAll(new ArrayList<>(Arrays.asList(authors)));
@@ -61,7 +63,8 @@ public class Item implements Serializable {
     }
 
     Item(String title, String path) {
-        this.path = path;
+        File file = new File(path);
+        this.path = file.getAbsolutePath();
         this.title = title;
         validateParams();
     }

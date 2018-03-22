@@ -9,17 +9,26 @@ public class ReportCommand implements Command {
     }
 
     public void execute(ArrayList<String> data) {
-        String path = data.get(1).replace("\"", "");
+        String reportPath = data.get(1).replace("\"", "");
+        String reportType = data.get(0).split(" ")[1].toLowerCase();
 
-        switch(data.get(0).split(" ")[1].toLowerCase()){
+        reportPath = reportPath.endsWith("." + reportType) ? reportPath : reportPath + "." + reportType;
+
+        switch(reportType){
             case "html":
-                new HTMLReport(catalog, path).create();
+                new HTMLReport(catalog, reportPath).create();
                 break;
             case "pdf":
-                // TO DO: pdf report class
+                new DynamicReport(catalog, reportType, reportPath).create();
                 break;
-            case "word":
-                // TO DO: word document report class
+            case "xls":
+                new DynamicReport(catalog, reportType, reportPath).create();
+                break;
+            case "csv":
+                new DynamicReport(catalog, reportType, reportPath).create();
+                break;
+            case "docx":
+                new DynamicReport(catalog, reportType, reportPath).create();
                 break;
             default:
                 System.out.println("This format is not supported!");
