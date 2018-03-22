@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class AddCommand implements Command {
     private Catalog catalog;
-    AddCommand(Catalog catalog){
+    public AddCommand(Catalog catalog){
         this.catalog = catalog;
     }
 

@@ -88,5 +88,21 @@ public class Item implements Serializable {
         }
     }
 
+    @Override
+    public String toString(){
+        if (year != null) {
+            return this.title +
+                    ", " +
+                    this.year.toString() +
+                    ", [" +
+                    this.path +
+                    "]";
+        }
 
+        return this.title +
+                ", [" +
+                this.path +
+                "]";
+
+    }
 }

@@ -43,7 +43,7 @@ public class Catalog implements Serializable {
         items.add(item);
     }
 
-    public void save(String path){
+    public boolean save(String path){
         try {
             if (path == null || path.equals("")) throw new CustomException("Path not valid!");
         }
@@ -52,7 +52,7 @@ public class Catalog implements Serializable {
             System.exit(0);
         }
 
-        Serialize(this, path);
+        return Serialize(this, path);
     }
 
     public static Catalog load(String path){
@@ -73,7 +73,7 @@ public class Catalog implements Serializable {
      * @param object Object that is being serialized.
      * @param path File path where object should be stored.
      */
-    private void Serialize(Object object, String path) {
+    private boolean Serialize(Object object, String path) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(path);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
@@ -81,9 +81,11 @@ public class Catalog implements Serializable {
             fileOutputStream.close();
             objectOutputStream.close();
             System.out.println(String.format("SERIALIZED [%s]: %s", object.getClass().getName(), object));
+            return true;
         } catch (IOException exception) {
             // Output unexpected IOException.
             System.out.println(exception.getMessage());
+            return false;
         }
     }
 
