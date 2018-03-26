@@ -12,5 +12,7 @@
     <orderEntry type="library" name="net.sourceforge.dynamicreports:dynamicreports-adhoc:5.1.0" level="project" />
     <orderEntry type="library" name="net.sourceforge.dynamicreports:dynamicreports-adhoc:5.1.01" level="project" />
     <orderEntry type="library" name="org.apache.poi:poi:3.17" level="project" />
+    <orderEntry type="library" name="jxdocument-1.2" level="project" />
+    <orderEntry type="library" name="license" level="project" />
   </component>
 </module>

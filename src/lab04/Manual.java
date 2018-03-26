@@ -6,8 +6,8 @@ package lab04;
 
 import java.io.File;
 
-class Manual extends Item {
-    Manual(String title, String path){
+public class Manual extends Item {
+    public Manual(String title, String path){
         super(title, path);
     }
 

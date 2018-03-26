@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CatalogList extends JList {
+    private static CatalogList instance = null;
     private DefaultListModel<Object> model = new DefaultListModel<>();
 
     public String getTitle() {
@@ -11,6 +12,7 @@ public class CatalogList extends JList {
     }
 
     private String title;
+
     CatalogList(){
         this.title = "<html><i><font color='blue'>" +
                 "Catalog Documents" + "</font></i></html>";
@@ -19,7 +21,13 @@ public class CatalogList extends JList {
         this.setModel(model);
         this.setMinimumSize(new Dimension(100, 100));
         this.setAlignmentX(CENTER_ALIGNMENT);
+    }
 
+    public static CatalogList getInstance(){
+        if (instance == null){
+            instance = new CatalogList();
+        }
+        return instance;
     }
 
     public void addDocument(String item){

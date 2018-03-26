@@ -75,9 +75,10 @@ public class Item implements Serializable {
             if (year == null || year < 0) throw new CustomException("Year not valid!");
             if (path == null) throw new CustomException("Path not valid!");
             File file = new File(path);
-            file.createNewFile(); // if file already exists will do nothing
-            FileOutputStream oFile = new FileOutputStream(file, false);
-            oFile.close();
+            if(!file.exists()){ // not sure if you shouldn't really throw an exception here
+                FileOutputStream oFile = new FileOutputStream(file, false);
+                oFile.close();
+            }
 
             for(String author: authors)
                 if (author == null || author.equals("")) throw new CustomException("Author not valid!");
@@ -90,19 +91,6 @@ public class Item implements Serializable {
 
     @Override
     public String toString(){
-        if (year != null) {
-            return this.title +
-                    ", " +
-                    this.year.toString() +
-                    ", [" +
-                    this.path +
-                    "]";
-        }
-
-        return this.title +
-                ", [" +
-                this.path +
-                "]";
-
+       return this.title;
     }
 }

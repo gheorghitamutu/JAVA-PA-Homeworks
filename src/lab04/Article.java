@@ -4,8 +4,8 @@
 
 package lab04;
 
-class Article extends Item {
-    Article(String title, String path, Integer year, String... authors) {
+public class Article extends Item {
+    public Article(String title, String path, Integer year, String... authors) {
         super(title, path, year, authors);
     }
 }

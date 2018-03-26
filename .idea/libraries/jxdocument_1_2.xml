@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jxdocument-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jxdocument-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/jxdocument-1.2-cross-desktop-win_mac_linux/doc" />
+    </SOURCES>
+  </library>
+</component>

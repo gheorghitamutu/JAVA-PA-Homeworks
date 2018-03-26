@@ -37,7 +37,7 @@ public class Source {
         //new SaveCommand(catalog).execute(UI);
 
         //ArrayList<String> UI = new ArrayList<>(Arrays.asList("report docx \"resources\\lab04\\reports\\docxreports\\report.docx\"".split(" \"")));
-        //        //new ReportCommand(catalog).execute(UI);
+        //new ReportCommand(catalog).execute(UI);
         //System.exit(0);
 
         Scanner scan = new Scanner(System.in);
