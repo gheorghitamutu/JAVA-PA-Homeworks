@@ -10,7 +10,8 @@ import java.util.ArrayList;
 class MainFrame extends JFrame {
     private MainMenuPanel mainMenuPanel;
 
-    private Catalog catalog;
+    // required to be initialized for open file command
+    private Catalog catalog = new Catalog();
 
     public CatalogList getCatalogList() {
         return catalogList;

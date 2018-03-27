@@ -11,9 +11,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.nio.file.Paths;
 
-public class MainMenuPanel  extends JPanel implements ActionListener {
-    private final MainFrame mainFrame = MainFrame.getInstance();
+public class MainMenuPanel
+        extends JPanel
+        implements ActionListener {
 
     private final JLabel catalogLabel = new JLabel("Catalog Manager");
     private final JButton newCatalogBtn = new JButton("New Catalog");
@@ -24,13 +26,13 @@ public class MainMenuPanel  extends JPanel implements ActionListener {
     private final KeyStroke escapeKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false);
 
     private JFileChooser fc = new JFileChooser();
-    private Catalog catalog = MainFrame.getInstance().getCatalog();
 
     MainMenuPanel(){
         init();
     }
 
     private void init(){
+        this.fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         assignActions();
         designComponents();
         applyLayout();
@@ -38,34 +40,33 @@ public class MainMenuPanel  extends JPanel implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.loadCatalogBtn) {
-            if (this.fc.showOpenDialog(this.mainFrame) == JFileChooser.APPROVE_OPTION) {
+            if (this.fc.showOpenDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
                 File file = this.fc.getSelectedFile();
 
-                Catalog catalog = new LoadCommand(this.catalog).execute(file.getAbsolutePath());
+                Catalog catalog = new LoadCommand(MainFrame.getInstance().getCatalog()).execute(file.getAbsolutePath());
                 if(catalog != null){
-                    this.catalog = catalog;
+                    MainFrame.getInstance().setCatalog(catalog);
 
                     for(Item item: catalog.getItems()){
                         CatalogList.getInstance().addDocument(item.toString());
                     }
-                    this.mainFrame.changePanel(new TreePanel(this.catalog));
+                    MainFrame.getInstance().changePanel(new TreePanel());
                 }
                 else {
-                    JOptionPane.showMessageDialog(this.mainFrame,
+                    JOptionPane.showMessageDialog(MainFrame.getInstance(),
                             "The file is not a catalog file!",
                             "Error!", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
         else if(e.getSource() == this.newCatalogBtn){
-            this.mainFrame.setCatalog(new Catalog());
-            this.catalog = this.mainFrame.getCatalog();
-            this.mainFrame.changePanel(new TreePanel(this.catalog));
+            MainFrame.getInstance().setCatalog(new Catalog());
+            MainFrame.getInstance().changePanel(new TreePanel());
         }
         else if (e.getSource() == this.openFileBtn) {
-            if (this.fc.showOpenDialog(this.mainFrame) == JFileChooser.APPROVE_OPTION) {
+            if (this.fc.showOpenDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
                 File file = this.fc.getSelectedFile();
-                new OpenCommand(this.catalog).execute(file.getAbsolutePath());
+                new OpenCommand(MainFrame.getInstance().getCatalog()).execute(file.getAbsolutePath());
             }
         }
         else if (e.getSource() == exitAppBtn) {
@@ -91,7 +92,6 @@ public class MainMenuPanel  extends JPanel implements ActionListener {
         this.add(catalogLabel);
 
         gbc.gridy = 2;
-        gbc.insets = new Insets(10, 10, 0, 10); // this crap makes gaps
         gridBagLayout.setConstraints(newCatalogBtn, gbc);
         this.add(newCatalogBtn);
 
@@ -102,7 +102,6 @@ public class MainMenuPanel  extends JPanel implements ActionListener {
 
 
         gbc.gridy = 6;
-        gbc.insets = new Insets(40, 10, 10, 10); // this crap makes gaps
         gridBagLayout.setConstraints(openFileBtn, gbc);
         this.add(openFileBtn);
 
@@ -118,9 +117,9 @@ public class MainMenuPanel  extends JPanel implements ActionListener {
         this.loadCatalogBtn.addActionListener(this);
         this.openFileBtn.addActionListener(this);
 
-        Action exitAction = mainFrame.getDisposeAction();
-        this.mainFrame.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(escapeKeyStroke, "ESCAPE");
-        this.mainFrame.getRootPane().getActionMap().put("ESCAPE", exitAction);
+        Action exitAction = MainFrame.getInstance().getDisposeAction();
+        MainFrame.getInstance().getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(escapeKeyStroke, "ESCAPE");
+        MainFrame.getInstance().getRootPane().getActionMap().put("ESCAPE", exitAction);
         this.exitAppBtn.addActionListener(exitAction);
     }
 

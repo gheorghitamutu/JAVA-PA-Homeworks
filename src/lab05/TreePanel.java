@@ -1,7 +1,10 @@
 package lab05;
 
 import com.teamdev.jxdocument.Document;
-import lab04.*;
+import lab04.Article;
+import lab04.Book;
+import lab04.Item;
+import lab04.Manual;
 import org.apache.commons.io.IOUtils;
 
 import javax.swing.*;
@@ -19,18 +22,16 @@ public class TreePanel
         extends JPanel
         implements TreeSelectionListener {
     private JEditorPane documentInfoPane;
+
     private JTree tree;
 
-    private Catalog catalog;
-
-    TreePanel(Catalog catalog) {
+    TreePanel() {
         super();
-        this.catalog = catalog;
-        this.setMaximumSize(new Dimension(0, 600));
+        this.setMaximumSize(new Dimension(0, 570));
 
         //Create the nodes.
         DefaultMutableTreeNode top =
-                new DefaultMutableTreeNode(catalog.getName());
+                new DefaultMutableTreeNode(MainFrame.getInstance().getCatalog().getName());
         addChildrenToNode(top);
 
         //Create a tree that allows one selection at a time.
@@ -41,7 +42,7 @@ public class TreePanel
         //Listen for when the selection changes.
         tree.addTreeSelectionListener(this);
 
-        //this.setBorder(BorderFactory.createLineBorder(Color.blue));
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
 
         GridBagLayout gridBagLayout = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
@@ -60,7 +61,7 @@ public class TreePanel
         documentInfoPane = new JEditorPane();
         documentInfoPane.setEditable(false);
         rootMessage();
-        documentInfoPane.setPreferredSize(new Dimension(0, 200));
+        documentInfoPane.setPreferredSize(new Dimension(0, 190));
 
         JScrollPane infoItemView = new JScrollPane(documentInfoPane);
 
@@ -80,7 +81,7 @@ public class TreePanel
         gbc.insets = new Insets(10, 10, 10, 10); // this crap makes gaps   t - l - b - r
 
         gbc.gridy = 2;
-        JPanel bottomPanel = new BottomMenu(this.catalog);
+        JPanel bottomPanel = new BottomMenu();
         gridBagLayout.setConstraints(bottomPanel, gbc);
         this.add(bottomPanel, gbc);
     }
@@ -275,7 +276,7 @@ public class TreePanel
     }
 
     private void addChildrenToNode(DefaultMutableTreeNode node) {
-        for(Item item: catalog.getItems()){
+        for(Item item: MainFrame.getInstance().getCatalog().getItems()){
             node.add(new DefaultMutableTreeNode(item));
         }
     }
@@ -353,5 +354,13 @@ public class TreePanel
         }
 
         return "PDF has no readable pages!";
+    }
+
+    public JTree getTree() {
+        return tree;
+    }
+
+    public void setTree(JTree tree) {
+        this.tree = tree;
     }
 }
