@@ -7,6 +7,18 @@ public class MouseCustomListener extends MouseInputAdapter {
 
     private Canvas canvas;
 
+    public int getOffsetX() {
+        return offsetX;
+    }
+
+    private int offsetX = 20;
+
+    public int getOffsetY() {
+        return offsetY;
+    }
+
+    private int offsetY = 60;
+
     private static final String NEWLINE = System.getProperty("line.separator");
 
     public void setDrawWhileDragged(boolean drawWhileDragged) {
@@ -32,7 +44,7 @@ public class MouseCustomListener extends MouseInputAdapter {
             eventOutput("Mouse pressed (# of clicks: "
                 + e.getClickCount() + ")", e);
 
-            this.canvas.getBlankArea().drawShapeAt(e.getX() + 20, e.getY() + 60);
+            this.canvas.getBlankArea().drawShapeAt(e.getX() + this.offsetX, e.getY() + this.offsetY);
         }
     }
 

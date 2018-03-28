@@ -30,6 +30,10 @@ public class ToolbarPanel
     private final JSpinner radiusSpinner = new JSpinner(new SpinnerNumberModel(3, 3, 60, 1));
 
     private Canvas canvas;
+
+    private final JButton drawFunctionGraphBtn = new JButton("Draw Function Graph");
+    private final JTextField functionTF = new JTextField();
+
     ToolbarPanel(Canvas canvas) {
         this.canvas = canvas;
         init();
@@ -44,7 +48,7 @@ public class ToolbarPanel
     private void addDocumentLayout() {
         GridBagLayout gridBagLayout = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-        this.setPreferredSize(new Dimension(800, 100));
+        this.setPreferredSize(new Dimension(800, 200));
         this.setLayout(gridBagLayout);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 20;
@@ -72,6 +76,15 @@ public class ToolbarPanel
         gbc.gridx = 4;
         gridBagLayout.setConstraints(this.radiusSpinner, gbc);
         this.add(this.radiusSpinner, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gridBagLayout.setConstraints(this.drawFunctionGraphBtn, gbc);
+        this.add(this.drawFunctionGraphBtn, gbc);
+
+        gbc.gridx = 1;
+        gridBagLayout.setConstraints(this.functionTF, gbc);
+        this.add(this.functionTF, gbc);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -90,12 +103,18 @@ public class ToolbarPanel
         else if (e.getSource() == this.drawWhileMouseDraggedBtn) {
             this.canvas.getMouseListener().setDrawWhileDragged(this.drawWhileMouseDraggedBtn.isSelected());
         }
+        else if (e.getSource() == this.drawFunctionGraphBtn) {
+            String exp = this.functionTF.getText();
+            this.canvas.getBlankArea().drawFunctionGraph(exp);
+        }
     }
 
     private void assignListeners() {
         this.drawBtn.addActionListener(this);
         this.allRandomBtn.addActionListener(this);
         this.drawWhileMouseDraggedBtn.addActionListener(this);
+        this.drawFunctionGraphBtn.addActionListener(this);
+        this.functionTF.addActionListener(this);
     }
 
     private void setMinimumSize(){
@@ -104,5 +123,7 @@ public class ToolbarPanel
         this.drawWhileMouseDraggedBtn.setMinimumSize(new Dimension(40, 20));
         this.sidesSpinner.setMinimumSize(new Dimension(40,20));
         this.radiusSpinner.setMinimumSize(new Dimension(40, 20));
+        this.drawFunctionGraphBtn.setMinimumSize(new Dimension(40, 20));
+        this.functionTF.setMinimumSize(new Dimension(40, 20));
     }
 }

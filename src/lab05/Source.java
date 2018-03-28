@@ -5,7 +5,7 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class Source {
     public static void main(String[] args) {
-        try {
+                try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             NimbusLookAndFeel laf = new NimbusLookAndFeel();
             UIManager.setLookAndFeel(laf);
