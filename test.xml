@@ -1,0 +1,16 @@
+<catalog>
+   <items class="java.util.ArrayList">
+      <item class="lab04.Article">
+         <title>whatever</title>
+         <path>C:\Users\ghita\Documents\java-pa-homeworks\java-pa-homeworks.iml</path>
+         <year>2018</year>
+         <authors class="java.util.ArrayList">
+            <string>No author</string>
+            <string> No author</string>
+            <string> No author</string>
+         </authors>
+      </item>
+   </items>
+   <name>lab04.Catalog</name>
+   <developer>gmutu</developer>
+</catalog>

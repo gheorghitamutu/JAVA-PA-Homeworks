@@ -84,7 +84,16 @@ class MainFrame extends JFrame {
         public Action getDisposeAction(){
             return new AbstractAction() {
                 public void actionPerformed(ActionEvent e) {
-                    dispose();
+                    //default icon, custom title
+                    int exit = JOptionPane.showConfirmDialog(
+                            MainFrame.getInstance(),
+                            "Exit app",
+                            "Exit app?",
+                            JOptionPane.YES_NO_OPTION);
+
+                    if (exit == JOptionPane.YES_NO_OPTION) {
+                        dispose();
+                    }
                 }
             };
         }

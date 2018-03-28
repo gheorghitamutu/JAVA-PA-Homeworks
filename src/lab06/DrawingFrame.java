@@ -10,6 +10,18 @@ class DrawingFrame extends JFrame {
     private GridBagLayout gridBagLayout = new GridBagLayout();
     private GridBagConstraints gbc = new GridBagConstraints();
 
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    public ToolbarPanel getToolbarPanel() {
+        return toolbarPanel;
+    }
+
+    private ToolbarPanel toolbarPanel;
+
+    private Canvas canvas = new Canvas();
+
         DrawingFrame(){
             super("Canvas Manager");
             init();
@@ -23,8 +35,10 @@ class DrawingFrame extends JFrame {
             this.setResizable(false);
             this.setGridBagLayout();
 
-            this.changePanel(new Canvas(), false, 0, 0);
-            this.changePanel(new ControlPanel(), false, 0, 3);
+            this.changePanel(this.canvas, false, 0, 0);
+            this.toolbarPanel = new ToolbarPanel(this.canvas);
+            this.changePanel(this.toolbarPanel, false, 0, 3);
+            this.changePanel(new ControlPanel(), false, 0, 8);
         }
 
         private void changePanel(JPanel panel, boolean removePreviousPanels, int gridx, int gridy){
@@ -51,17 +65,26 @@ class DrawingFrame extends JFrame {
 
         private void setGridBagLayout(){
             this.gbc.gridwidth = 1;
-            this.gbc.gridheight = 3;
+            this.gbc.gridheight = 1;
 
             this.gbc.gridx = 1;
-            this.gbc.gridy = 3;
+            this.gbc.gridy = 1;
             this.setLayout(this.gridBagLayout);
         }
 
         public Action getDisposeAction(){
             return new AbstractAction() {
                 public void actionPerformed(ActionEvent e) {
-                    dispose();
+                    //default icon, custom title
+                    int exit = JOptionPane.showConfirmDialog(
+                            DrawingFrame.getInstance(),
+                            "Exit app",
+                            "Exit app?",
+                            JOptionPane.YES_NO_OPTION);
+
+                    if (exit == JOptionPane.YES_NO_OPTION) {
+                        dispose();
+                    }
                 }
             };
         }

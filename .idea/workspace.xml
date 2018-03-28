@@ -7,14 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5dee3a7-b2d3-4a10-b3dc-9c7d98d2c63f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/BlankArea.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/Canvas.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/ControlPanel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/DrawingFrame.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/RegularPolygon.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/Source.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/MouseCustomListener.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/lab06/ToolbarPanel.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/lab04_jar/lab04.jar" afterPath="$PROJECT_DIR$/out/artifacts/lab04_jar/lab04.jar" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/BlankArea.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/BlankArea.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/Canvas.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/Canvas.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/ControlPanel.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/ControlPanel.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/DrawingFrame$1.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/DrawingFrame$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/DrawingFrame.class" afterPath="$PROJECT_DIR$/out/production/java-pa-homeworks/lab06/DrawingFrame.class" />
+      <change beforePath="$PROJECT_DIR$/src/lab05/MainFrame.java" afterPath="$PROJECT_DIR$/src/lab05/MainFrame.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab06/BlankArea.java" afterPath="$PROJECT_DIR$/src/lab06/BlankArea.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab06/Canvas.java" afterPath="$PROJECT_DIR$/src/lab06/Canvas.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab06/ControlPanel.java" afterPath="$PROJECT_DIR$/src/lab06/ControlPanel.java" />
+      <change beforePath="$PROJECT_DIR$/src/lab06/DrawingFrame.java" afterPath="$PROJECT_DIR$/src/lab06/DrawingFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,26 +39,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ControlPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lab06/ControlPanel.java">
+      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab06/Canvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+            <state relative-caret-position="-306">
+              <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#490#491#0" expanded="true" />
-                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#288#289#0" expanded="true" />
+                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#423#424#0" expanded="true" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#656#657#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lab06/Canvas.java">
+      <file leaf-file-name="MouseCustomListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab06/MouseCustomListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#384#385#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+                <element signature="e#1531#1532#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControlPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab06/ControlPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#574#575#0" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToolbarPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab06/ToolbarPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="73" column="42" lean-forward="false" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#767#768#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlankArea.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lab06/BlankArea.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+              <folding>
+                <element signature="e#259#260#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,9 +122,29 @@
       <file leaf-file-name="DrawingFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab06/DrawingFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="26" column="60" lean-forward="false" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
-              <folding />
+            <state relative-caret-position="242">
+              <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="86" selection-end-column="21" />
+              <folding>
+                <element signature="e#329#330#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#2371#2909#0" expanded="true" />
+                <element signature="e#2908#2909#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lab05/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="88" column="52" lean-forward="true" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+              <folding>
+                <element signature="e#2672#3207#0" expanded="true" />
+                <element signature="e#3206#3207#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +178,9 @@
       <find>article</find>
       <find>border</find>
       <find>catalog</find>
+      <find>poly</find>
+      <find>exitA</find>
+      <find>if</find>
     </findStrings>
     <replaceStrings>
       <replace>book</replace>
@@ -116,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lab03/ProblemGenerator.java" />
-        <option value="$PROJECT_DIR$/src/lab03/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/Source.java" />
         <option value="$PROJECT_DIR$/src/lab03/GreedyAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/lab04/Article.java" />
@@ -154,7 +237,6 @@
         <option value="$PROJECT_DIR$/src/lab05/CatalogTable.java" />
         <option value="$PROJECT_DIR$/src/lab04/OpenCommand.java" />
         <option value="$PROJECT_DIR$/src/lab05/Source.java" />
-        <option value="$PROJECT_DIR$/src/lab05/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/lab05/XMLTree.java" />
         <option value="$PROJECT_DIR$/src/lab05/TreePanel.java" />
         <option value="$PROJECT_DIR$/src/lab05/MainMenuPanel.java" />
@@ -163,10 +245,13 @@
         <option value="$PROJECT_DIR$/src/lab06/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/lab06/Source.java" />
         <option value="$PROJECT_DIR$/src/lab06/RegularPolygon.java" />
+        <option value="$PROJECT_DIR$/src/lab06/MouseCustomListener.java" />
         <option value="$PROJECT_DIR$/src/lab06/BlankArea.java" />
         <option value="$PROJECT_DIR$/src/lab06/Canvas.java" />
-        <option value="$PROJECT_DIR$/src/lab06/DrawingFrame.java" />
+        <option value="$PROJECT_DIR$/src/lab06/ToolbarPanel.java" />
         <option value="$PROJECT_DIR$/src/lab06/ControlPanel.java" />
+        <option value="$PROJECT_DIR$/src/lab06/DrawingFrame.java" />
+        <option value="$PROJECT_DIR$/src/lab05/MainFrame.java" />
       </list>
     </option>
   </component>
@@ -200,10 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,6 +323,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,9 +570,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Lab06Source" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Lab03Source" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Lab02Source" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Lab01Source" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Lab01Source" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Lab03Source" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Lab02Source" />
         <item index="4" class="java.lang.String" itemvalue="JAR Application.choco-solver-4.0.6-with-dependencies.jar" />
       </list>
     </recent_temporary>
@@ -540,51 +625,55 @@
       <workItem from="1522153065648" duration="3086000" />
       <workItem from="1522156183240" duration="3000" />
       <workItem from="1522156225534" duration="14295000" />
+      <workItem from="1522220534883" duration="4883000" />
+      <workItem from="1522227654403" duration="355000" />
+      <workItem from="1522236894329" duration="6111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149665000" />
+    <option name="totallyTimeSpent" value="161014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22580644" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22580644" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2956989" sideWeight="0.5127932" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2956989" sideWeight="0.5191898" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2956989" sideWeight="0.48720682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3827957" sideWeight="0.48081023" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39569893" sideWeight="0.4936034" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39569893" sideWeight="0.4936034" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2971154" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2956989" sideWeight="0.5191898" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -593,18 +682,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39569893" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39569893" sideWeight="0.4936034" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22580644" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22580644" sideWeight="0.49573562" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2956989" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3827957" sideWeight="0.48081023" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19189766" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20255864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -680,7 +769,7 @@
           <option name="timeStamp" value="135" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="141" />
+      <option name="time" value="142" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -708,21 +797,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/lang/Runnable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab05/test.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/javax/swing/UIManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="166" column="24" lean-forward="false" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/awt/Window.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7259">
@@ -911,9 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#2506#2507#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,7 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,9 +999,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#2656#2657#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,7 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,7 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,7 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="1202" column="0" lean-forward="false" selection-start-line="1202" selection-start-column="0" selection-end-line="1202" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,37 +1048,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab06/BlankArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab05/BottomMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-243">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab05/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab05/MainMenuPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-515">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="89" />
-          <folding>
-            <element signature="method#applyLayout#0;class#MainMenuPanel#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1067,41 +1104,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab05/ControlPanel.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/java/awt/geom/Line2D.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="173" column="8" lean-forward="true" selection-start-line="173" selection-start-column="8" selection-end-line="175" selection-end-column="63" />
+        <state relative-caret-position="4675">
+          <caret line="328" column="20" lean-forward="false" selection-start-line="328" selection-start-column="20" selection-end-line="328" selection-end-column="20" />
           <folding>
-            <element signature="e#1246#1247#0" expanded="false" />
-            <element signature="e#1268#1269#0" expanded="false" />
+            <marker date="1519203244586" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1519203244586" expanded="false" signature="137:208" ph="..." />
+            <marker date="1519203244586" expanded="true" signature="292:299" ph="{}" />
+            <marker date="1519203244586" expanded="true" signature="664:745" ph="{...}" />
+            <marker date="1519203244586" expanded="false" signature="783:794" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="863:869" ph=" }" />
+            <marker date="1519203244586" expanded="true" signature="984:1525" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="1580:1683" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="1726:1843" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="1993:2234" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="2322:2440" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="2489:2639" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="2757:3437" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="3553:3636" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="3694:3797" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="3843:3960" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="4016:4117" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="4161:4276" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="4395:4757" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="4874:4958" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="5017:5121" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="5168:5286" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="5343:5445" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="5490:5606" ph="{...}" />
+            <marker date="1519203244586" expanded="false" signature="5661:5672" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="5685:5691" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="5734:5745" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="5758:5764" ph=" }" />
+            <marker date="1519203244586" expanded="true" signature="5848:5949" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="5999:6098" ph="{...}" />
+            <marker date="1519203244586" expanded="false" signature="6179:6190" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="6203:6209" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="6256:6267" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="6280:6286" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="6320:6331" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="6369:6375" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="6438:6449" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="6485:6491" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="6567:6578" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="6614:6620" ph=" }" />
+            <marker date="1519203244586" expanded="true" signature="6648:6808" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="6880:8737" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="7086:7097" ph="{}" />
+            <marker date="1519203244586" expanded="false" signature="7172:7187" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7224:7234" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7285:7300" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7325:7335" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7366:7381" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7396:7406" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7437:7452" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7467:7477" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7509:7524" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7582:7592" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7623:7638" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7653:7663" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7694:7709" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7724:7734" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="7766:7781" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="7839:7849" ph=" }" />
+            <marker date="1519203244586" expanded="true" signature="7931:8054" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="8097:8731" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="8808:10908" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="9009:9020" ph="{}" />
+            <marker date="1519203244586" expanded="true" signature="9090:9105" ph=" { " />
+            <marker date="1519203244586" expanded="true" signature="9142:9152" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9202:9217" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9242:9252" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9283:9298" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9321:9331" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9362:9377" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9400:9410" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9442:9457" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9514:9524" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9555:9570" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9593:9603" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9634:9649" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9672:9682" ph=" }" />
+            <marker date="1519203244586" expanded="false" signature="9714:9729" ph=" { " />
+            <marker date="1519203244586" expanded="false" signature="9786:9796" ph=" }" />
+            <marker date="1519203244586" expanded="true" signature="9878:10029" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="10107:10230" ph="{...}" />
+            <marker date="1519203244586" expanded="true" signature="10273:10902" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab06/DrawingFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/lab05/ControlPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="26" column="60" lean-forward="false" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+        <state relative-caret-position="204">
+          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="99" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab06/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-          <folding />
+        <state relative-caret-position="-306">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding>
+            <element signature="e#288#289#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab06/MouseCustomListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab06/ToolbarPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="73" column="42" lean-forward="false" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab06/BlankArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#259#260#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab05/MainMenuPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="99" />
+          <folding>
+            <element signature="method#applyLayout#0;class#MainMenuPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab06/ControlPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="118">
+          <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab06/DrawingFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="86" selection-end-column="21" />
+          <folding>
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#2371#2909#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab05/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="88" column="52" lean-forward="true" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
+          <folding>
+            <element signature="e#2672#3207#0" expanded="true" />
+            <element signature="e#3206#3207#0" expanded="true" />
           </folding>
         </state>
       </provider>

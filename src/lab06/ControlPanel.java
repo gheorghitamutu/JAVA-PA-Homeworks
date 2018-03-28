@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.nio.file.Paths;
+import java.awt.event.KeyEvent;
 
 public class ControlPanel
         extends JPanel
@@ -13,15 +12,15 @@ public class ControlPanel
     private JButton loadBtn = new JButton("Load");
     private JButton saveBtn = new JButton("Save");
     private JButton resetBtn = new JButton("Reset");
+    private JButton exitBtn = new JButton("Exit");
 
-    private JFileChooser fc = new JFileChooser();
+    private final KeyStroke escapeKeyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0, false);
 
     ControlPanel(){
         init();
     }
 
     private void init() {
-        this.fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         this.assignListeners();
         this.setMinimumSize();
         this.addDocumentLayout();
@@ -30,11 +29,11 @@ public class ControlPanel
     private void addDocumentLayout() {
         GridBagLayout gridBagLayout = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
-        this.setPreferredSize(new Dimension(800, 200));
+        this.setPreferredSize(new Dimension(800, 100));
         this.setLayout(gridBagLayout);
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.ipady = 20;
-        gbc.ipadx = 140;
+        gbc.ipadx = 120;
 
         gbc.gridx = 0;
         gbc.insets = new Insets(10, 10, 0, 10); // this crap makes gaps
@@ -48,17 +47,24 @@ public class ControlPanel
         gbc.gridx = 2;
         gridBagLayout.setConstraints(this.resetBtn, gbc);
         this.add(this.resetBtn, gbc);
+
+        gbc.gridx = 3;
+        gridBagLayout.setConstraints(this.exitBtn, gbc);
+        this.add(this.exitBtn, gbc);
     }
 
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == this.saveBtn){
-            String sb = "";
+            DrawingFrame.getInstance().getCanvas().saveCanvas();
         }
         else if(e.getSource() == this.loadBtn) {
-            // do nothing
+            DrawingFrame.getInstance().getCanvas().loadCanvas();
         }
         else if (e.getSource() == this.resetBtn) {
-            // do nothing
+            DrawingFrame.getInstance().getCanvas().resetCanvas();
+        }
+        else if(e.getSource() == this.exitBtn) {
+            DrawingFrame.getInstance().getDisposeAction();
         }
     }
 
@@ -66,11 +72,18 @@ public class ControlPanel
         this.saveBtn.addActionListener(this);
         this.loadBtn.addActionListener(this);
         this.resetBtn.addActionListener(this);
+
+        Action exitAction = DrawingFrame.getInstance().getDisposeAction();
+        DrawingFrame.getInstance().getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(escapeKeyStroke, "ESCAPE");
+        DrawingFrame.getInstance().getRootPane().getActionMap().put("ESCAPE", exitAction);
+        this.exitBtn.addActionListener(exitAction);
+        this.exitBtn.addActionListener(this);
     }
 
     private void setMinimumSize(){
         this.saveBtn.setMinimumSize(new Dimension(600, 20));
         this.loadBtn.setMinimumSize(new Dimension(600, 20));
         this.resetBtn.setMinimumSize(new Dimension(600, 20));
+        this.exitBtn.setMinimumSize(new Dimension(600, 20));
     }
 }
