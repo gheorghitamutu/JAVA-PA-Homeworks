@@ -33,6 +33,7 @@ public class ToolbarPanel
 
     private final JButton drawFunctionGraphBtn = new JButton("Draw Function Graph");
     private final JTextField functionTF = new JTextField();
+    private final JSpinner functionLengthSpinner = new JSpinner(new SpinnerNumberModel(3, 3, 10000, 1));
 
     ToolbarPanel(Canvas canvas) {
         this.canvas = canvas;
@@ -85,6 +86,10 @@ public class ToolbarPanel
         gbc.gridx = 1;
         gridBagLayout.setConstraints(this.functionTF, gbc);
         this.add(this.functionTF, gbc);
+
+        gbc.gridx = 2;
+        gridBagLayout.setConstraints(this.functionLengthSpinner, gbc);
+        this.add(this.functionLengthSpinner, gbc);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -105,7 +110,8 @@ public class ToolbarPanel
         }
         else if (e.getSource() == this.drawFunctionGraphBtn) {
             String exp = this.functionTF.getText();
-            this.canvas.getBlankArea().drawFunctionGraph(exp);
+            String length = this.functionLengthSpinner.getValue().toString();
+            this.canvas.getBlankArea().drawFunctionGraph(exp, Integer.parseInt(length) + 1);
         }
     }
 
@@ -125,5 +131,6 @@ public class ToolbarPanel
         this.radiusSpinner.setMinimumSize(new Dimension(40, 20));
         this.drawFunctionGraphBtn.setMinimumSize(new Dimension(40, 20));
         this.functionTF.setMinimumSize(new Dimension(40, 20));
+        this.functionLengthSpinner.setMinimumSize(new Dimension(20, 20));
     }
 }

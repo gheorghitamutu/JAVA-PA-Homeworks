@@ -1,32 +1,40 @@
 package lab06;
 
-import org.apache.commons.jexl3.*;
+import net.objecthunter.exp4j.ExpressionBuilder;
+import org.apache.commons.jexl3.JexlException;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.font.FontRenderContext;
+import java.awt.font.LineMetrics;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Path2D;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static java.lang.Math.cos;
-import static java.lang.Math.pow;
-import static java.lang.Math.sin;
 
 public class BlankArea extends JPanel {
     private Dimension dimension = new Dimension(1024, 450);
-    private static final JexlEngine jexl = new JexlBuilder().cache(512).strict(true).silent(false).create();
 
     public BufferedImage getSurface() {
         return surface;
     }
 
-    private BufferedImage surface = new BufferedImage(dimension.width , dimension.height, BufferedImage.TYPE_INT_ARGB);
+    private BufferedImage surface = new BufferedImage(dimension.width, dimension.height, BufferedImage.TYPE_INT_ARGB);
     private ImageIcon imageIcon = new ImageIcon(surface);
     private Random random = new Random();
 
     private JLabel view;
+
+    private double[] x;
+    private double[] y;
+    private double xMin;
+    private double xMax;
+    private double yMin;
+    private double yMax;
+    private final int PAD = 100;
+    private int length;
 
     BlankArea() {
         GridLayout gridLayout = new GridLayout(0, 1);
@@ -44,12 +52,11 @@ public class BlankArea extends JPanel {
     public void drawShapeAt(int x, int y) {
         Graphics2D graphics = surface.createGraphics();
         Polygon polygon;
-        if(DrawingFrame.getInstance().getToolbarPanel().getAllRandomBtn().isSelected()) {
+        if (DrawingFrame.getInstance().getToolbarPanel().getAllRandomBtn().isSelected()) {
             polygon = new RegularPolygon(x, y, random.nextInt(0x40), random.nextInt(0x10));
-        }
-        else {
-            int sides = (int)DrawingFrame.getInstance().getToolbarPanel().getSidesSpinner().getValue();
-            int radius = (int)DrawingFrame.getInstance().getToolbarPanel().getRadiusSpinner().getValue();
+        } else {
+            int sides = (int) DrawingFrame.getInstance().getToolbarPanel().getSidesSpinner().getValue();
+            int radius = (int) DrawingFrame.getInstance().getToolbarPanel().getRadiusSpinner().getValue();
             polygon = new RegularPolygon(x, y, sides, radius);
         }
         graphics.setColor(new Color(random.nextInt(0xFFFFFF)));
@@ -64,8 +71,8 @@ public class BlankArea extends JPanel {
         int maxx = this.view.getSize().width;
         int maxy = this.view.getSize().height;
 
-        int sides = (int)DrawingFrame.getInstance().getToolbarPanel().getSidesSpinner().getValue();
-        int radius = (int)DrawingFrame.getInstance().getToolbarPanel().getRadiusSpinner().getValue();
+        int sides = (int) DrawingFrame.getInstance().getToolbarPanel().getSidesSpinner().getValue();
+        int radius = (int) DrawingFrame.getInstance().getToolbarPanel().getRadiusSpinner().getValue();
 
         Polygon polygon = new RegularPolygon(random.nextInt(maxx), random.nextInt(maxy), sides, radius);
 
@@ -107,171 +114,157 @@ public class BlankArea extends JPanel {
         this.add(this.view);
     }
 
-    public boolean drawFunctionGraph(String expStr) {
-        int offsetX = DrawingFrame.getInstance().getCanvas().getMouseListener().getOffsetX();
-        int offsetY = DrawingFrame.getInstance().getCanvas().getMouseListener().getOffsetY();
-        int offset20 = 20;
-        int startX = offsetY + offset20;
-        int length = (this.view.getSize().width + offsetX + offset20 * 2) - startX;
-
-
+    public void drawFunctionGraph(String expStr, int functionLength) {
         try {
-            checkExpression(expStr, startX);
-        }
-        catch (JexlException e) {
+            Graphics2D graphics = surface.createGraphics();
+            graphics.setColor(Color.BLACK);
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+            // actual computing
+            this.length = functionLength;
+            this.x = new double[this.length];
+            this.y = new double[this.length];
+            for (int pointOnXAxis = 0; pointOnXAxis < this.length; pointOnXAxis++) {
+                this.x[pointOnXAxis] = pointOnXAxis;
+                this.y[pointOnXAxis] = computeExp(expStr, pointOnXAxis);
+            }
+
+            double[] xVals = getExtremeValues(x);
+            xMin = xVals[0];
+            xMax = xVals[1];
+            System.out.printf("xMin = %5.1f  xMax = %5.1f%n", xMin, xMax);
+
+            double[] yVals = getExtremeValues(y);
+            yMin = yVals[0];
+            yMax = yVals[1];
+            System.out.printf("yMin = %5.1f  yMax = %5.1f%n", yMin, yMax);
+
+            drawFunctionGraph(graphics);
+
+            graphics.setColor(Color.red);
+            graphics.dispose();
+            view.repaint();
+
+        } catch (JexlException e) {
             JOptionPane.showMessageDialog(DrawingFrame.getInstance(),
                     "Invalid function syntax!",
                     "Function Error",
                     JOptionPane.ERROR_MESSAGE);
-            return false;
         }
-
-        Graphics2D graphics = surface.createGraphics();
-        graphics.setColor(Color.BLACK);
-
-        // X line
-        graphics.drawLine(
-                offsetY + offset20,                                      // leftX
-                (this.view.getSize().height + offsetY * 2) / 2,         // topY
-                this.view.getSize().width - + offsetX + offset20 ,      // rightX
-                (this.view.getSize().height + offsetY * 2) / 2);        // botY
-
-        // Y line
-        graphics.drawLine(
-                (this.view.getSize().width + offsetX) / 2,
-                offsetY + offset20 * 2,
-                (this.view.getSize().width + offsetX) / 2,
-                (this.view.getSize().height + offsetY) - offset20);
-
-        // X arrow
-        graphics.drawLine(
-                this.view.getSize().width - + offsetX + offset20 ,
-                (this.view.getSize().height + offsetY * 2) / 2,
-                this.view.getSize().width - + offsetX + offset20 / 2 ,
-                (this.view.getSize().height + offsetY * 2) / 2 - offset20 / 2);
-        graphics.drawLine(
-                this.view.getSize().width - + offsetX + offset20 ,
-                (this.view.getSize().height + offsetY * 2) / 2,
-                this.view.getSize().width - + offsetX + offset20 / 2,
-                (this.view.getSize().height + offsetY * 2) / 2 + offset20 / 2);
-
-        // Y arrow
-        graphics.drawLine(
-                (this.view.getSize().width + offsetX) / 2,
-                offsetY + offset20 * 2,
-                (this.view.getSize().width + offsetX) / 2 - offset20 / 2,
-                offsetY + offset20 * 2 + offset20 / 2);
-        graphics.drawLine(
-                (this.view.getSize().width + offsetX) / 2,
-                offsetY + offset20 * 2,
-                (this.view.getSize().width + offsetX) / 2 + offset20 / 2,
-                offsetY + offset20 * 2 + offset20 / 2);
-
-        // arrow names
-        graphics.drawString("X",
-                this.view.getSize().width - offset20 + offsetX,
-                (this.view.getSize().height + offsetY) / 2);
-        graphics.drawString("Y",
-                (this.view.getSize().width + offsetX) / 2 + offset20,
-                offset20 + offsetY);
-
-        Polygon p = new Polygon();
-        Polygon p2 = new Polygon();
-
-        // bring the starting point to the visible area of the graph
-        // just scaling factor with the minium need for highest Y point
-        // THIS IS NOT CORRECT!
-        double y = computeExp(expStr, startX);
-        double scalingFactor = 1;
-        int windowSize = (this.view.getSize().height + offsetY * 2);
-
-        if(y < 0) {
-            scalingFactor = -1;
-        }
-
-        for (int pointOnXAxis = startX; pointOnXAxis <= length; pointOnXAxis++) {
-            y = computeExp(expStr, pointOnXAxis);
-            while (y * scalingFactor > windowSize) {
-                scalingFactor *= 0.95;
-            }
-        }
-
-        // actual computing
-        for (int pointOnXAxis = startX; pointOnXAxis <= length; pointOnXAxis++) {
-            y = computeExp(expStr, pointOnXAxis);
-            y = y * scalingFactor;
-            //double x = pointOnXAxis * scalingFactor;
-            p.addPoint(pointOnXAxis, (int)y);
-        }
-
-        graphics.setColor(Color.red);
-        graphics.drawPolyline(p.xpoints, p.ypoints, p.npoints);
-        graphics.setColor(Color.blue);
-        graphics.drawPolyline(p2.xpoints, p2.ypoints, p2.npoints);
-        graphics.dispose();
-        view.repaint();
-
-        return true;
-    }
-
-    private double f(double x) {
-        return sin(x);
-    }
-
-    private double gCos(double y) {
-        return cos(y);
-    }
-
-    // "custom" sin and cos function are scaling the results to a wider Y in order to see something on the canvas
-    private int getSin(int X) {
-        int offsetY = DrawingFrame.getInstance().getCanvas().getMouseListener().getOffsetY();
-        return (this.view.getSize().height + offsetY * 2) / 2 - (int) (50 * f((X / 100.0) * 2 * Math.PI));
-    }
-
-    private int getCos(int X) {
-        int offsetY = DrawingFrame.getInstance().getCanvas().getMouseListener().getOffsetY();
-        return (this.view.getSize().height + offsetY * 2) / 2 - (int) (50 * gCos((X / 100.0) * 2 * Math.PI));
     }
 
     private double computeExp(String expStr, int x) {
-        expStr = expStr.replace(" ", "");
-        expStr = expStr.replace("sin(x)", Integer.toString(getSin(x)));
-        expStr = expStr.replace("cos(x)", Integer.toString(getCos(x)));
-        expStr = expStr.replace("x", Integer.toString(x));
+        net.objecthunter.exp4j.Expression e = new ExpressionBuilder(expStr)
+                .variables("x")
+                .build()
+                .setVariable("x", x);
+        return e.evaluate();
+    }
 
-        ArrayList<String> allMatches = new ArrayList<>();
-        Matcher m = Pattern.compile("([0-9 ]+\\^[0-9 ]+)")
-                .matcher(expStr);
-        while (m.find()) {
-            allMatches.add(m.group());
-        };
+    private void drawFunctionGraph(Graphics2D g2) {
+        int w = getWidth();
+        int h = getHeight();
 
-        for(String match: allMatches) {
-            ArrayList<String> terms = new ArrayList<>();
-            Matcher matchTerms = Pattern.compile("([0-9 ]+)")
-                    .matcher(expStr);
-            while (matchTerms.find()) {
-                terms.add(matchTerms.group());
-            };
-            double first = Double.parseDouble(terms.get(0));
-            double second = Double.parseDouble(terms.get(1));
-            expStr = expStr.replace(match, Double.toString(pow(first, second)));
+        double xScale = (w - 2 * PAD) / (xMax - xMin);
+        double yScale = (h - 2 * PAD) / (yMax - yMin);
+
+        System.out.printf("xScale = %.1f  yScale = %.1f%n", xScale, yScale);
+
+        Point2D.Double origin = new Point2D.Double(); // Axes origin.
+        Point2D.Double offset = new Point2D.Double(); // Locate data.
+        if (xMax < 0) {
+            origin.x = w - PAD;
+            offset.x = origin.x - xScale * xMax;
+        } else if (xMin < 0) {
+            origin.x = PAD - xScale * xMin;
+            offset.x = origin.x;
+        } else {
+            origin.x = PAD;
+            offset.x = PAD - xScale * xMin;
+        }
+        if (yMax < 0) {
+            origin.y = h - PAD;
+            offset.y = origin.y - yScale * yMax;
+        } else if (yMin < 0) {
+            origin.y = PAD - yScale * yMin;
+            offset.y = origin.y;
+        } else {
+            origin.y = PAD;
+            offset.y = PAD - yScale * yMin;
         }
 
+        System.out.printf("origin = [%6.1f, %6.1f]%n", origin.x, origin.y);
+        System.out.printf("offset = [%6.1f, %6.1f]%n", offset.x, offset.y);
 
+        // Draw abcissa.
+        g2.draw(new Line2D.Double(PAD, origin.y, w - PAD, origin.y));
+        // Draw ordinate.
+        g2.draw(new Line2D.Double(origin.x, PAD, origin.x, h - PAD));
+        g2.setPaint(Color.red);
+        // Mark origin.
+        g2.fill(new Ellipse2D.Double(origin.x - 2, origin.y - 2, 4, 4));
 
-        JexlExpression exp = jexl.createExpression( expStr );
-        JexlContext context = new MapContext();
+        g2.setPaint(Color.red);
 
-        Number result = (Number) exp.evaluate(context);
+        // Plot data.
+        Path2D p = new Path2D.Double();
+        p.moveTo(offset.x + xScale * x[0], offset.y + yScale * y[0]);
+        for (int i = 1; i < x.length - 1; i++) {
+            double x1 = offset.x + xScale * x[i];
+            double y1 = offset.y + yScale * y[i];
+            p.lineTo(x1, y1);
+            System.out.printf("i = %d  x1 = %6.1f  y1 = %.1f%n", i, x1, y1);
+            if (this.length < 1000) {
+                g2.fill(new Ellipse2D.Double(x1 - 2, y1 - 2, 4, 4));
+                g2.drawString(String.valueOf(i), (float) x1 + 3, (float) y1 - 3);
+            }
+        }
 
-        return result.doubleValue();
+        //p.closePath(); // don t close it!
+        g2.draw(p);
+
+        // Draw extreme data values.
+        g2.setPaint(Color.black);
+
+        Font font = g2.getFont();
+        FontRenderContext frc = g2.getFontRenderContext();
+        LineMetrics lm = font.getLineMetrics("0", frc);
+
+        String s = String.format("%.1f", xMin);
+        double x = offset.x + xScale * xMin;
+        g2.drawString(s, (float) x, (float) origin.y + lm.getAscent());
+
+        s = String.format("%.1f", xMax);
+        float width = (float) font.getStringBounds(s, frc).getWidth();
+        x = offset.x + xScale * xMax;
+        g2.drawString(s, (float) x - width, (float) origin.y + lm.getAscent());
+
+        s = String.format("%.1f", yMin);
+        double y = offset.y + yScale * yMin;
+        g2.drawString(s, (float) origin.x + 1, (float) y + lm.getAscent());
+
+        s = String.format("%.1f", yMax);
+        y = offset.y + yScale * yMax;
+        g2.drawString(s, (float) origin.x + 1, (float) y);
+
+        System.out.println("------------------------------");
     }
 
-    private JexlExpression checkExpression(String exp, int x) {
-        exp = exp.replace(" ", "");
-        exp = exp.replace("sin(x)", Integer.toString(getSin(x)));
-        exp = exp.replace("cos(x)", Integer.toString(getCos(x)));
-        return jexl.createExpression( exp );
+    private double[] getExtremeValues(double[] d) {
+        double min = Double.MAX_VALUE;
+        double max = -min;
+        for (double aD : d) {
+            if (aD < min) {
+                min = aD;
+            }
+            if (aD > max) {
+                max = aD;
+            }
+        }
+        return new double[]{min, max};
     }
+
+
+    // TO DO: Lagrange interpolation function
+    // TO DO: SVG Export
 }
