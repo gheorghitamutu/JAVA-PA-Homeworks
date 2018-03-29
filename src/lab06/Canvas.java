@@ -1,11 +1,8 @@
 package lab06;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Paths;
 
 public class Canvas
@@ -24,7 +21,6 @@ public class Canvas
     private JTextArea textArea;
 
     private JFileChooser fc = new JFileChooser();
-    private Dimension dimension = new Dimension(1024, 450);
 
     public MouseCustomListener getMouseListener() {
         return mouseListener;
@@ -39,11 +35,10 @@ public class Canvas
 
         GridLayout gridLayout = new GridLayout(2 ,1);
         this.setLayout(gridLayout);
-        mouseListener = new MouseCustomListener(this);
-        blankArea = new BlankArea();
-
-
+        mouseListener = new MouseCustomListener(this); // you need this before blankArea init
+        blankArea = new BlankArea(this);
         add(blankArea);
+
 
         textArea = new JTextArea();
         textArea.setEditable(false);
@@ -69,35 +64,24 @@ public class Canvas
     public void saveCanvas() {
         fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
-            String imagePath = this.fc.getSelectedFile().getAbsolutePath().endsWith(".png") ?
+            String imagePath = this.fc.getSelectedFile().getAbsolutePath().endsWith(".svg") ?
                     this.fc.getSelectedFile().getAbsolutePath() :
-                    this.fc.getSelectedFile().getAbsolutePath() + ".png";
-
-            try {
-                ImageIO.write(blankArea.getSurface(),"png", new File(imagePath));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                    this.fc.getSelectedFile().getAbsolutePath() + ".svg";
+            this.getBlankArea().saveSVG(imagePath);
         }
     }
 
     public void loadCanvas() {
         fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            String imagePath = this.fc.getSelectedFile().getAbsolutePath().endsWith(".png") ?
-                    this.fc.getSelectedFile().getAbsolutePath() :
-                    this.fc.getSelectedFile().getAbsolutePath() + ".png";
+            String file = this.fc.getSelectedFile().getAbsolutePath();
 
-            try {
-                this.blankArea.changeSurface(ImageIO.read(new File(imagePath)));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            this.getBlankArea().loadSVG(file);
         }
+
     }
 
     public void resetCanvas() {
-            this.blankArea.changeSurface(new BufferedImage(dimension.width , dimension.height,
-                    BufferedImage.TYPE_INT_ARGB));
+            this.blankArea.changeSurface();
         }
 }

@@ -35,6 +35,9 @@ public class ToolbarPanel
     private final JTextField functionTF = new JTextField();
     private final JSpinner functionLengthSpinner = new JSpinner(new SpinnerNumberModel(3, 3, 10000, 1));
 
+    private final JButton drawLagrange = new JButton("Draw Lagrange");
+    private final JCheckBox storePoints = new JCheckBox("Store points");
+
     ToolbarPanel(Canvas canvas) {
         this.canvas = canvas;
         init();
@@ -90,6 +93,19 @@ public class ToolbarPanel
         gbc.gridx = 2;
         gridBagLayout.setConstraints(this.functionLengthSpinner, gbc);
         this.add(this.functionLengthSpinner, gbc);
+
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gridBagLayout.setConstraints(this.drawLagrange, gbc);
+        this.add(this.drawLagrange, gbc);
+
+        gbc.gridx = 1;
+        gridBagLayout.setConstraints(this.storePoints, gbc);
+        this.add(this.storePoints, gbc);
+    }
+
+    public JCheckBox getStorePoints() {
+        return storePoints;
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -113,6 +129,23 @@ public class ToolbarPanel
             String length = this.functionLengthSpinner.getValue().toString();
             this.canvas.getBlankArea().drawFunctionGraph(exp, Integer.parseInt(length) + 1);
         }
+        else if (e.getSource() == this.storePoints) {
+            this.drawLagrange.setEnabled(this.storePoints.isSelected());
+            int maxPointsLagrange = 1000;
+            int graphLength = Integer.parseInt(this.functionLengthSpinner.getValue().toString()) + 1;
+            DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeX(new double[maxPointsLagrange]);
+            DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeY(new double[maxPointsLagrange]);
+            DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeGraphLength(graphLength);
+            
+            // first point will add to lagrangeLength +1
+            DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeLength(-1);
+        }
+        else if (e.getSource() == this.drawLagrange) {
+            DrawingFrame.getInstance().getCanvas().resetCanvas();
+            this.canvas.getBlankArea().drawLagrangeGraph();
+            this.storePoints.setSelected(false);
+            this.drawLagrange.setEnabled(false);
+        }
     }
 
     private void assignListeners() {
@@ -121,6 +154,8 @@ public class ToolbarPanel
         this.drawWhileMouseDraggedBtn.addActionListener(this);
         this.drawFunctionGraphBtn.addActionListener(this);
         this.functionTF.addActionListener(this);
+        this.drawLagrange.addActionListener(this);
+        this.storePoints.addActionListener(this);
     }
 
     private void setMinimumSize(){
@@ -132,5 +167,8 @@ public class ToolbarPanel
         this.drawFunctionGraphBtn.setMinimumSize(new Dimension(40, 20));
         this.functionTF.setMinimumSize(new Dimension(40, 20));
         this.functionLengthSpinner.setMinimumSize(new Dimension(20, 20));
+        this.storePoints.setMinimumSize(new Dimension(40, 40));
+        this.drawLagrange.setMinimumSize(new Dimension(40, 40));
+        this.drawLagrange.setEnabled(false);
     }
 }

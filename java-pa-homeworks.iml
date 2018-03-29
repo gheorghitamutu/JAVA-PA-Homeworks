@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="org.choco-solver:choco-solver:4.0.6" level="project" />
+    <orderEntry type="library" name="org.choco-solver:choco-solver:4.0.6" level="project" />
     <orderEntry type="library" name="freemarker:freemarker:2.3.8" level="project" />
     <orderEntry type="library" name="net.sourceforge.dynamicreports:dynamicreports-adhoc:5.1.0" level="project" />
     <orderEntry type="library" name="net.sourceforge.dynamicreports:dynamicreports-adhoc:5.1.01" level="project" />
@@ -17,5 +17,60 @@
     <orderEntry type="library" name="org.simpleframework:simple-xml:2.7.1" level="project" />
     <orderEntry type="library" name="commons-jexl3-3.1" level="project" />
     <orderEntry type="library" name="exp4j-0.4.8" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-1.9/batik-svggen-1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-svggen-1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-svggen-1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-swing-1.7.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/batik-1.1.1_2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="batik-all-1.9" level="project" />
   </component>
 </module>

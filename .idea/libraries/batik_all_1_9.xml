@@ -1,0 +1,44 @@
+<component name="libraryTable">
+  <library name="batik-all-1.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/batik-all-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-anim-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-awt-util-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-bridge-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-constants-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-css-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-dom-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-ext-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-extension-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-gui-util-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-gvt-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-i18n-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-parser-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-script-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-svg-dom-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-svggen-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-swing-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-transcoder-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-util-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-xml-1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/batik-anim-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-awt-util-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-bridge-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-constants-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-css-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-dom-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-ext-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-gvt-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-i18n-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-parser-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-script-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-svg-dom-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-util-1.9-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/batik-xml-1.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

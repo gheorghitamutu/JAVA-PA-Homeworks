@@ -3,19 +3,12 @@ package lab06;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.event.MouseEvent;
 
-public class MouseCustomListener extends MouseInputAdapter {
+public class MouseCustomListener
+        extends MouseInputAdapter {
 
     private Canvas canvas;
 
-    public int getOffsetX() {
-        return offsetX;
-    }
-
     private int offsetX = 20;
-
-    public int getOffsetY() {
-        return offsetY;
-    }
 
     private int offsetY = 60;
 
@@ -32,6 +25,7 @@ public class MouseCustomListener extends MouseInputAdapter {
         this.canvas = canvas;
     }
 
+
     private void eventOutput(String eventDescription, MouseEvent e) {
         this.canvas.getTextArea().append(eventDescription + " detected on "
                 + e.getComponent().getClass().getName()
@@ -44,7 +38,7 @@ public class MouseCustomListener extends MouseInputAdapter {
             eventOutput("Mouse pressed (# of clicks: "
                 + e.getClickCount() + ")", e);
 
-            this.canvas.getBlankArea().drawShapeAt(e.getX() + this.offsetX, e.getY() + this.offsetY);
+            this.canvas.getBlankArea().drawShapeAt(e.getX(), e.getY());
         }
     }
 
@@ -69,13 +63,15 @@ public class MouseCustomListener extends MouseInputAdapter {
     }
 
     public void mouseMoved(MouseEvent e) {
-        // eventOutput("Mouse moved", e);
+         //eventOutput("Mouse moved", e);
     }
 
     public void mouseDragged(MouseEvent e) {
         if(this.drawWhileDragged) {
-            this.canvas.getBlankArea().drawShapeAt(e.getX() + 20, e.getY() + 60);
+            this.canvas.getBlankArea().drawShapeAt(e.getX(), e.getY());
         }
         eventOutput("Mouse dragged", e);
     }
+
+
 }
