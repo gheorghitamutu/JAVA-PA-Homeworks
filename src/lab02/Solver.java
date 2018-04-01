@@ -11,14 +11,6 @@ public abstract class Solver {
         this.problem = problem;
     }
 
-    public Problem getProblem() {
-        return problem;
-    }
-
-    public void setProblem(Problem problem) {
-        this.problem = problem;
-    }
-
     public abstract void solve();
 
     public String printResult() {

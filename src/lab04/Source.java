@@ -60,7 +60,7 @@ public class Source {
                     new LoadCommand(catalog).execute(userInput, "");
                     break;
                 case "info":
-                    new InfoCommand(catalog).execute(userInput);
+                    new InfoCommand().execute(userInput);
                     break;
                 case "report":
                     new ReportCommand(catalog).execute(userInput);

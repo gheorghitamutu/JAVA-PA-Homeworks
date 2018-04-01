@@ -10,20 +10,20 @@ public class ToolbarPanel
         implements ActionListener {
     private final JButton drawBtn = new JButton("Draw shape");
 
-    public JCheckBox getAllRandomBtn() {
+    JCheckBox getAllRandomBtn() {
         return allRandomBtn;
     }
 
     private final JCheckBox allRandomBtn = new JCheckBox("All random");
     private final JCheckBox drawWhileMouseDraggedBtn = new JCheckBox("Draw while dragged");
 
-    public JSpinner getSidesSpinner() {
+    JSpinner getSidesSpinner() {
         return sidesSpinner;
     }
 
     private final JSpinner sidesSpinner = new JSpinner(new SpinnerNumberModel(3, 3, 60, 1));
 
-    public JSpinner getRadiusSpinner() {
+    JSpinner getRadiusSpinner() {
         return radiusSpinner;
     }
 
@@ -104,7 +104,7 @@ public class ToolbarPanel
         this.add(this.storePoints, gbc);
     }
 
-    public JCheckBox getStorePoints() {
+    JCheckBox getStorePoints() {
         return storePoints;
     }
 
@@ -138,7 +138,7 @@ public class ToolbarPanel
             DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeGraphLength(graphLength);
             
             // first point will add to lagrangeLength +1
-            DrawingFrame.getInstance().getCanvas().getBlankArea().setLagrangeLength(-1);
+            DrawingFrame.getInstance().getCanvas().getBlankArea().initLagrangeLength();
         }
         else if (e.getSource() == this.drawLagrange) {
             DrawingFrame.getInstance().getCanvas().resetCanvas();

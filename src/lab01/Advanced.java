@@ -10,7 +10,7 @@ import org.chocosolver.util.tools.StringUtils;
 import java.text.MessageFormat;
 import java.util.Arrays;
 
-public class Advanced {
+class Advanced {
     private Model model = new Model("Magic square");
     private int squareSize = 0;
     private IntVar[] vars;
@@ -89,7 +89,7 @@ public class Advanced {
         this.squareSize = squareSize;
     }
 
-    public void run(int squareSize){
+    void run(int squareSize){
         this.setSquareSize(squareSize);
         this.buildModel();
         this.configureSearch();

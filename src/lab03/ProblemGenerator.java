@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ProblemGenerator {
+class ProblemGenerator {
     private List<Item> items = new ArrayList<>();
 
-    public ProblemGenerator() {
+    ProblemGenerator() {
 
     }
 
-    public void generateProblem(int maxAssets, int maxItems, int maxValue, int maxPrice) {
+    void generateProblem(int maxAssets, int maxItems, int maxValue, int maxPrice) {
         if (maxItems < maxAssets) {
             System.out.println("Items are assets + other items. MaxItems can't be lower than maxAssets!");
             System.exit(0);
@@ -51,7 +51,7 @@ public class ProblemGenerator {
         }
     }
 
-    public void solveProblem(int maxPortofolioValue) {
+    void solveProblem(int maxPortofolioValue) {
         if (maxPortofolioValue < 1) {
             System.out.println("You can't have a potofolio with less than 1 as value!");
             System.exit(0);

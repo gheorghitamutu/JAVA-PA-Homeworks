@@ -6,25 +6,24 @@ package lab02;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class Problem {
     private List<Student> students;
     private List<Teacher> teachers;
 
 
-    public Problem() {
+    Problem() {
         teachers = new ArrayList<>();
         students = new ArrayList<>();
     }
 
-    public void setStudents(List<Student> students) {
+    void setStudents(List<Student> students) {
         boolean exists;
         for (Student student : students) {
             exists = false;
             for (Student student1 : this.students) {
                 if (student.equals(student1)) {
-                    System.out.println("Can't add the same student twice!");
+                    System.out.println("Can't add the same student twice to the same problem!");
                     exists = true;
                     break;
                 }
@@ -35,7 +34,7 @@ public class Problem {
         }
     }
 
-    public void setTeachers(List<Teacher> teachers) {
+    void setTeachers(List<Teacher> teachers) {
         boolean exists;
         for (Teacher teacher : teachers) {
             exists = false;
@@ -72,14 +71,7 @@ public class Problem {
         return problem.toString();
     }
 
-    public List<Person> getParticipants() {
-        List<Person> participants = new Vector<>(students);
-        participants.addAll(teachers);
-
-        return participants;
-    }
-
-    public List<Student> getStudents() {
+    List<Student> getStudents() {
         return this.students;
     }
 }

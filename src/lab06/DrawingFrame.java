@@ -10,11 +10,11 @@ class DrawingFrame extends JFrame {
     private GridBagLayout gridBagLayout = new GridBagLayout();
     private GridBagConstraints gbc = new GridBagConstraints();
 
-    public Canvas getCanvas() {
+    Canvas getCanvas() {
         return canvas;
     }
 
-    public ToolbarPanel getToolbarPanel() {
+    ToolbarPanel getToolbarPanel() {
         return toolbarPanel;
     }
 
@@ -72,7 +72,7 @@ class DrawingFrame extends JFrame {
             this.setLayout(this.gridBagLayout);
         }
 
-        public Action getDisposeAction(){
+        Action getDisposeAction(){
             return new AbstractAction() {
                 public void actionPerformed(ActionEvent e) {
                     //default icon, custom title

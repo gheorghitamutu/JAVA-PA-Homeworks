@@ -5,8 +5,7 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class Source {
     public static void main(String[] args) {
-                try {
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        try {
             NimbusLookAndFeel laf = new NimbusLookAndFeel();
             UIManager.setLookAndFeel(laf);
             UIDefaults defs = laf.getDefaults();
@@ -18,7 +17,6 @@ public class Source {
             // do nothing
         } finally {
             SwingUtilities.invokeLater(() -> new MainFrame().setVisible(true));
-            //SwingUtilities.invokeLater(() -> new TreePanel(new Catalog()).createAndShowGUI());
         }
     }
 }

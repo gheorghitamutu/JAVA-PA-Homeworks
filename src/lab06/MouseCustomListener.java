@@ -8,13 +8,9 @@ public class MouseCustomListener
 
     private Canvas canvas;
 
-    private int offsetX = 20;
-
-    private int offsetY = 60;
-
     private static final String NEWLINE = System.getProperty("line.separator");
 
-    public void setDrawWhileDragged(boolean drawWhileDragged) {
+    void setDrawWhileDragged(boolean drawWhileDragged) {
         this.drawWhileDragged = drawWhileDragged;
     }
 

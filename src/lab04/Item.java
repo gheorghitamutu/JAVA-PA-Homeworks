@@ -35,10 +35,6 @@ public class Item implements Serializable {
         return year;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
     public List<String> getAuthors() {
         return authors;
     }
@@ -57,7 +53,6 @@ public class Item implements Serializable {
         this.path = file.getAbsolutePath();
         this.title = title;
         this.year = year;
-        this.title = title;
         this.authors.addAll(new ArrayList<>(Arrays.asList(authors)));
         validateParams();
     }

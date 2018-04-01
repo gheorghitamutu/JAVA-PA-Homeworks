@@ -7,7 +7,7 @@ package lab02;
 import java.util.List;
 
 public class RandomStudentSolver extends Solver {
-    public RandomStudentSolver(Problem problem) {
+    RandomStudentSolver(Problem problem) {
         super(problem);
     }
 

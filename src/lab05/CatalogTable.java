@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-public class CatalogTable extends JPanel {
+class CatalogTable extends JPanel {
 
     CatalogTable() {
         super(new GridLayout(1,0));

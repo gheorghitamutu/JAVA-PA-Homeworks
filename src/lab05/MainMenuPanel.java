@@ -86,7 +86,7 @@ public class MainMenuPanel
         gbc.ipady = 30;
 
         gbc.gridy = 0;
-        gbc.insets = new Insets(10, 10, 0, 10); // this crap makes gaps
+        gbc.insets = new Insets(10, 10, 0, 10); // component padding
         catalogLabel.setHorizontalAlignment(JLabel.CENTER);
         gridBagLayout.setConstraints(catalogLabel, gbc);
         this.add(catalogLabel);
@@ -96,7 +96,7 @@ public class MainMenuPanel
         this.add(newCatalogBtn);
 
         gbc.gridy = 4;
-        gbc.insets = new Insets(40, 10, 0, 10); // this crap makes gaps
+        gbc.insets = new Insets(40, 10, 0, 10);
         gridBagLayout.setConstraints(loadCatalogBtn, gbc);
         this.add(loadCatalogBtn);
 
@@ -107,7 +107,7 @@ public class MainMenuPanel
 
 
         gbc.gridy = 8;
-        gbc.insets = new Insets(40, 10, 10, 10); // this crap makes gaps
+        gbc.insets = new Insets(40, 10, 10, 10);
         gridBagLayout.setConstraints(exitAppBtn, gbc);
         this.add(exitAppBtn);
     }

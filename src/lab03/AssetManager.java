@@ -19,7 +19,7 @@ public class AssetManager {
         return this.items;
     }
 
-    public List<Item> getAssets(){
+    List<Item> getAssets(){
         List<Item> assets = new ArrayList<>();
         for(Item item: this.items){
             if(item.getValue() != 0){
@@ -33,7 +33,7 @@ public class AssetManager {
         return assets;
     }
 
-    public Portofolio createPortofolio(Algorithm algorithm, int maxValue){
+    Portofolio createPortofolio(Algorithm algorithm, int maxValue){
         return new Portofolio(algorithm, maxValue, items);
     }
 }

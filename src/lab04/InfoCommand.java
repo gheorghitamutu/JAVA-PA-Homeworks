@@ -8,9 +8,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 
 public class InfoCommand implements Command {
-    private Catalog catalog;
-    InfoCommand(Catalog catalog){
-        this.catalog = catalog;
+    InfoCommand(){
     }
 
 

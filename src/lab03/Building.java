@@ -19,7 +19,7 @@ public class Building extends Item implements Asset {
         return computeProfit();
     }
 
-    public Building(String name, int value, int price) {
+    Building(String name, int value, int price) {
         super(name, value, price);
     }
 }

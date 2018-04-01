@@ -11,11 +11,11 @@ public class Student extends Person {
     private List<Project> projects;
     private Project assignedProject;
 
-    public Student(String name, String email) {
+    Student(String name, String email) {
         super(name, email);
     }
 
-    public void setPreferences(List<Project> projects) {
+    void setPreferences(List<Project> projects) {
         this.projects = projects;
     }
 
@@ -34,15 +34,15 @@ public class Student extends Person {
         return preferences.toString();
     }
 
-    public Project getAssignedProject() {
+    Project getAssignedProject() {
         return this.assignedProject;
     }
 
-    public void setAssignedProject(Project project) {
+    void setAssignedProject(Project project) {
         this.assignedProject = project;
     }
 
-    public List<Project> getPreferences() {
+    List<Project> getPreferences() {
         return this.projects;
     }
 

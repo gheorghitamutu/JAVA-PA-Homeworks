@@ -13,7 +13,7 @@ public class CatalogList extends JList {
 
     private String title;
 
-    CatalogList(){
+    private CatalogList(){
         this.title = "<html><i><font color='blue'>" +
                 "Catalog Documents" + "</font></i></html>";
 
@@ -30,7 +30,7 @@ public class CatalogList extends JList {
         return instance;
     }
 
-    public void addDocument(String item){
+    void addDocument(String item){
         model.addElement(item);
     }
 }

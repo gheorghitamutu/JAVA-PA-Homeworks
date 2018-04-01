@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Source {
-    public static void example(){
+    private static void example(){
         Building h1 = new Building("House 1", 27, 9);
         Building h2 = new Building("House 2", 36, 9);
         Building h3 = new Building("House 3", 45, 9);

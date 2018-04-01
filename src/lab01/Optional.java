@@ -3,9 +3,9 @@
 
 package lab01;
 
-public class Optional {
+class Optional {
 
-    public void run(String[] args) {
+    void run(String[] args) {
         long startTime = System.nanoTime();
 
         int squareSize = Integer.parseInt(args[0]);

@@ -355,12 +355,4 @@ public class TreePanel
 
         return "PDF has no readable pages!";
     }
-
-    public JTree getTree() {
-        return tree;
-    }
-
-    public void setTree(JTree tree) {
-        this.tree = tree;
-    }
 }

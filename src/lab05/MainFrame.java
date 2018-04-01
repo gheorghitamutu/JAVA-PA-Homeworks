@@ -5,7 +5,6 @@ import lab04.Catalog;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 
 class MainFrame extends JFrame {
     private MainMenuPanel mainMenuPanel;
@@ -13,7 +12,7 @@ class MainFrame extends JFrame {
     // required to be initialized for open file command
     private Catalog catalog = new Catalog();
 
-    public CatalogList getCatalogList() {
+    CatalogList getCatalogList() {
         return catalogList;
     }
 
@@ -40,7 +39,7 @@ class MainFrame extends JFrame {
 
         }
 
-        public void changePanel(JPanel panel){
+        void changePanel(JPanel panel){
             for(Component component: this.getContentPane().getComponents()){ // solving removeAll() call which fucks up everything
                 if(component.getClass() == JPanel.class || Component.class.isAssignableFrom(JPanel.class)){
                     component.setVisible(false);
@@ -52,20 +51,6 @@ class MainFrame extends JFrame {
             this.add(panel);
             this.pack();
         }
-
-        public void changePanels(ArrayList<JPanel> panels){
-        for(Component component: this.getContentPane().getComponents()){ // solving removeAll() call which fucks up everything
-            if(component.getClass() == JPanel.class){
-                component.setVisible(false);
-                this.remove(component);
-            }
-        }
-
-        for(JPanel panel: panels){
-            panel.setVisible(true);
-            this.add(panel);
-        }
-    }
 
         public static MainFrame getInstance(){
             return instance; // instance will never be null as this is the first initialized class
@@ -81,7 +66,7 @@ class MainFrame extends JFrame {
             this.setLayout(this.gridBagLayout);
         }
 
-        public Action getDisposeAction(){
+        Action getDisposeAction(){
             return new AbstractAction() {
                 public void actionPerformed(ActionEvent e) {
                     //default icon, custom title

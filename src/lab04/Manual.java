@@ -7,7 +7,7 @@ package lab04;
 import java.io.File;
 
 public class Manual extends Item {
-    public Manual(String title, String path){
+    Manual(String title, String path){
         super(title, path);
     }
 

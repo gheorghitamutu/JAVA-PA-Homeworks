@@ -44,27 +44,23 @@ public class Project {
         return capacity;
     }
 
-    public int getLeftCapacity() {
+    int getLeftCapacity() {
         return this.leftCapacity;
     }
 
-    public void setLeftCapacity(int capacity) {
+    void setLeftCapacity(int capacity) {
         this.leftCapacity = capacity;
     }
 
-    public List<Student> getStudents() {
+    List<Student> getStudents() {
         return this.students;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
-    }
-
-    public boolean isFree() {
+    boolean isFree() {
         return (leftCapacity > 0);
     }
 
-    public Teacher getTeacher() {
+    Teacher getTeacher() {
         return this.teacher;
     }
 
@@ -90,7 +86,7 @@ public class Project {
         return "Proiectul " + this.name + " are capacitatea maxima " + this.capacity;
     }
 
-    public void addStudent(Student student) {
+    void addStudent(Student student) {
         this.students.add(student);
     }
 }

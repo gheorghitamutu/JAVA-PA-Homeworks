@@ -47,8 +47,5 @@ public class HTMLReport implements Report {
         catch(TemplateException | IOException TIOE){
             System.out.println(TIOE.getMessage());
         }
-
-
-
     }
 }

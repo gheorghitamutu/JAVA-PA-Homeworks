@@ -2,7 +2,7 @@
 
 package lab01;
 
-public class Compulsory {
+class Compulsory {
     private String[] languages = new String[]{
             "C", "C++", "C#", "Go", "JavaScript", "Perl", "PHP", "Python", "Swift", "Java"};
     private int result = (int) (Math.random() * 1_000_000);
@@ -18,7 +18,7 @@ public class Compulsory {
         return (sum < 10) ? sum : sumDigits(sum);
     }
 
-    public void run() {
+    void run() {
         this.result *= 3;
         this.result += 0b10101;
         this.result += 0xFF;

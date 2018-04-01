@@ -4,13 +4,9 @@
 
 package lab02;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Person {
     private String name;
     private String email;
-    private List<Project> projects = new ArrayList<>();
 
     Person(String name, String email) {
         setName(name);
@@ -31,10 +27,6 @@ public abstract class Person {
 
     private void setEmail(String email) {
         this.email = email;
-    }
-
-    void addProject(Project project) {
-        projects.add(project);
     }
 
     @Override

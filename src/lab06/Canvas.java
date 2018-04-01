@@ -5,16 +5,16 @@ import java.awt.*;
 import java.io.*;
 import java.nio.file.Paths;
 
-public class Canvas
+class Canvas
             extends JPanel {
 
-    public BlankArea getBlankArea() {
+    BlankArea getBlankArea() {
         return blankArea;
     }
 
     private BlankArea blankArea;
 
-    public JTextArea getTextArea() {
+    JTextArea getTextArea() {
         return textArea;
     }
 
@@ -22,7 +22,7 @@ public class Canvas
 
     private JFileChooser fc = new JFileChooser();
 
-    public MouseCustomListener getMouseListener() {
+    MouseCustomListener getMouseListener() {
         return mouseListener;
     }
 
@@ -61,7 +61,7 @@ public class Canvas
 
 
 
-    public void saveCanvas() {
+    void saveCanvas() {
         fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
             String imagePath = this.fc.getSelectedFile().getAbsolutePath().endsWith(".svg") ?
@@ -71,7 +71,7 @@ public class Canvas
         }
     }
 
-    public void loadCanvas() {
+    void loadCanvas() {
         fc.setCurrentDirectory(new File(Paths.get("").toAbsolutePath().toString()));
         if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             String file = this.fc.getSelectedFile().getAbsolutePath();
@@ -81,7 +81,7 @@ public class Canvas
 
     }
 
-    public void resetCanvas() {
+    void resetCanvas() {
             this.blankArea.changeSurface();
         }
 }

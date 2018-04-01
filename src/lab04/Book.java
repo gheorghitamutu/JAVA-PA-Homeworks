@@ -5,7 +5,7 @@
 package lab04;
 
 public class Book extends Item {
-    public Book(String title, String path, Integer year, String... authors) {
+    Book(String title, String path, Integer year, String... authors) {
         super(title, path, year, authors);
     }
 }

@@ -35,28 +35,26 @@ public class BlankArea extends JPanel {
     private double xMax;
     private double yMin;
     private double yMax;
-    private final int PAD = 100;
-    private int length;
 
-    public void setLagrangeX(double[] lagrangeX) {
+    void setLagrangeX(double[] lagrangeX) {
         this.lagrangeX = lagrangeX;
     }
 
     private double[] lagrangeX;
 
-    public void setLagrangeY(double[] lagrangeY) {
+    void setLagrangeY(double[] lagrangeY) {
         this.lagrangeY = lagrangeY;
     }
 
     private double[] lagrangeY;
 
-    public void setLagrangeLength(int lagrangeLength) {
-        this.lagrangeLength = lagrangeLength;
+    void initLagrangeLength() {
+        this.lagrangeLength = -1;
     }
 
     private int lagrangeLength;
 
-    public void setLagrangeGraphLength(int lagrangeGraphLength) {
+    void setLagrangeGraphLength(int lagrangeGraphLength) {
         this.lagrangeGraphLength = lagrangeGraphLength;
     }
 
@@ -65,17 +63,9 @@ public class BlankArea extends JPanel {
     private double[] lagrangeXPoints;
     private double[] lagrangeYPoints;
 
-    // Get a DOMImplementation.
-    private DOMImplementation impl = SVGDOMImplementation.getDOMImplementation();
-
     // Create an instance of org.w3c.dom.Document.
     private String svgNS = SVGDOMImplementation.SVG_NAMESPACE_URI;
-    private String svgRootElement = "svg";
     private SVGDocument document;
-
-    public SVGGraphics2D getSvgGenerator() {
-        return svgGenerator;
-    }
 
     // Create an instance of the SVG Generator.
     private SVGGraphics2D svgGenerator;
@@ -96,7 +86,7 @@ public class BlankArea extends JPanel {
 
     }
 
-    public void drawShapeAt(int x, int y) {
+    void drawShapeAt(int x, int y) {
         if(DrawingFrame.getInstance().getToolbarPanel().getStorePoints().isSelected()) {
             addLagrangePoint(x, y);
         }
@@ -121,7 +111,7 @@ public class BlankArea extends JPanel {
         jsvgCanvas.setSVGDocument(document);
     }
 
-    public void drawShapeAtRandomLocation() {
+    void drawShapeAtRandomLocation() {
         int maxx = this.jsvgCanvas.getSize().width;
         int maxy = this.jsvgCanvas.getSize().height;
 
@@ -139,7 +129,7 @@ public class BlankArea extends JPanel {
         jsvgCanvas.setSVGDocument(document);
     }
 
-    public void drawShapeAllRandom() {
+    void drawShapeAllRandom() {
         int maxx = this.jsvgCanvas.getSize().width;
         int maxy = this.jsvgCanvas.getSize().height;
 
@@ -154,7 +144,7 @@ public class BlankArea extends JPanel {
         jsvgCanvas.setSVGDocument(document);
     }
 
-    public void changeSurface() {
+    void changeSurface() {
         // just don't remove AFTER you added the component...
         for (Component component : this.getComponents()) {
             if (component == this.jsvgCanvas) {
@@ -164,8 +154,10 @@ public class BlankArea extends JPanel {
         }
 
         // Create an SVG document.
-        impl = SVGDOMImplementation.getDOMImplementation();
+        // Get a DOMImplementation.
+        DOMImplementation impl = SVGDOMImplementation.getDOMImplementation();
         svgNS = SVGDOMImplementation.SVG_NAMESPACE_URI;
+        String svgRootElement = "svg";
         document = (SVGDocument) impl.createDocument(svgNS, svgRootElement, null);
 
         // Create a converter for this document.
@@ -183,7 +175,7 @@ public class BlankArea extends JPanel {
         this.jsvgCanvas.addMouseMotionListener(canvas.getMouseListener());
     }
 
-    public void drawFunctionGraph(String expStr, int functionLength) {
+    void drawFunctionGraph(String expStr, int functionLength) {
         try {
             if(expStr.equals("")) {
                 return;
@@ -193,10 +185,9 @@ public class BlankArea extends JPanel {
             svgGenerator.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
             // actual computing
-            this.length = functionLength;
-            this.x = new double[this.length];
-            this.y = new double[this.length];
-            for (int pointOnXAxis = 0; pointOnXAxis < this.length; pointOnXAxis++) {
+            this.x = new double[functionLength];
+            this.y = new double[functionLength];
+            for (int pointOnXAxis = 0; pointOnXAxis < functionLength; pointOnXAxis++) {
                 this.x[pointOnXAxis] = pointOnXAxis;
                 this.y[pointOnXAxis] = computeExp(expStr, pointOnXAxis);
             }
@@ -227,7 +218,7 @@ public class BlankArea extends JPanel {
         }
     }
 
-    public void drawLagrangeGraph() {
+    void drawLagrangeGraph() {
         svgGenerator.setColor(Color.BLACK);
         svgGenerator.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -302,6 +293,7 @@ public class BlankArea extends JPanel {
         int w = getWidth();
         int h = getHeight();
 
+        int PAD = 100;
         double xScale = (w - 2 * PAD) / (xMax - xMin);
         double yScale = (h - 2 * PAD) / (yMax - yMin);
 
@@ -407,7 +399,7 @@ public class BlankArea extends JPanel {
         this.lagrangeY[this.lagrangeLength] = y;
     }
 
-    public void saveSVG(String path) {
+    void saveSVG(String path) {
         try {
             // Finally, stream out SVG to the standard output using
             // UTF-8 encoding.
@@ -420,7 +412,7 @@ public class BlankArea extends JPanel {
         }
     }
 
-    public void loadSVG(String path) {
+    void loadSVG(String path) {
         InputStream in = null;
         try {
             in = new FileInputStream(new File(path));

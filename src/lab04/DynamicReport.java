@@ -20,11 +20,6 @@ public class DynamicReport implements Report {
     private JasperReportBuilder report = DynamicReports.report();
     private String reportType;
 
-    DynamicReport(Catalog catalog, String reportPath) {
-        this.catalog = catalog;
-        this.reportPath = reportPath;
-    }
-
     DynamicReport(Catalog catalog, String reportType, String reportPath) {
         this.catalog = catalog;
         this.reportType = reportType;
@@ -42,8 +37,6 @@ public class DynamicReport implements Report {
                         Components.text(catalog.getName() + " Report")
                                 .setHorizontalTextAlignment(HorizontalTextAlignment.CENTER))
                 .setDataSource(createDataSource());
-
-
 
         try {
             report.show();

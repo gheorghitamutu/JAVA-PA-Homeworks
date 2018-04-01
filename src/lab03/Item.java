@@ -21,16 +21,8 @@ public class Item {
         this.value = 0;
     }
 
-    public void setValue(int value){
-        this.value = value;
-    }
-
     int getValue(){
         return this.value;
-    }
-
-    void setPrice(int price) {
-        this.price = price;
     }
 
     int getPrice() {

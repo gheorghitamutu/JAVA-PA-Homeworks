@@ -43,7 +43,7 @@ public class Catalog implements Serializable {
         items.add(item);
     }
 
-    public boolean save(String path){
+    boolean save(String path){
         try {
             if (path == null || path.equals("")) throw new CustomException("Path not valid!");
         }
@@ -55,7 +55,7 @@ public class Catalog implements Serializable {
         return Serialize(this, path);
     }
 
-    public static Catalog load(String path){
+    static Catalog load(String path){
         try {
             if (path == null ||  !(new File(path).exists())) throw new CustomException("Path not valid!");;
         }
@@ -140,7 +140,7 @@ public class Catalog implements Serializable {
 
     }
 
-    public void open(String path) {
+    void open(String path) {
         try {
             Desktop.getDesktop().open(new File(path));
         }

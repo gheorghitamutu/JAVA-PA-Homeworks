@@ -9,7 +9,7 @@ import java.util.List;
 
 public class StabilStudentSolver extends Solver {
 
-    public StabilStudentSolver(Problem problem) {
+    StabilStudentSolver(Problem problem) {
         super(problem);
     }
 

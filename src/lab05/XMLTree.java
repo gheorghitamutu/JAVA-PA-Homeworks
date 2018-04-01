@@ -9,7 +9,7 @@ import java.io.File;
 
 class XMLTree {
 
-    public boolean saveToFile(String xmlPath) {
+    boolean saveToFile(String xmlPath) {
         if(!xmlPath.endsWith(".xml")){
             xmlPath += ".xml";
         }

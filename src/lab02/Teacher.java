@@ -16,25 +16,25 @@ public class Teacher extends Person {
     private int capacity;
 
 
-    public Teacher(String name, String email, int capacity) {
+    Teacher(String name, String email, int capacity) {
         super(name, email);
         this.capacity = capacity;
         this.leftCapacity = capacity;
     }
 
-    public Project createProject(String name, int capacity) {
+    Project createProject(String name, int capacity) {
         Project project = new Project(name, capacity, this);
         projects.add(project);
         return project;
     }
 
-    public void setPreferences(List<Student> students) {
+    void setPreferences(List<Student> students) {
         boolean exists;
         for (Student student : students) {
             exists = false;
             for (Student student1 : this.students) {
                 if (student.equals(student1)) {
-                    System.out.println("Can't add the same student twice!");
+                    System.out.println("Can't add the same student twice to the same teacher!");
                     exists = true;
                     break;
                 }
@@ -78,19 +78,19 @@ public class Teacher extends Person {
         return leftCapacity > 0;
     }
 
-    public void setLeftCapacity(int leftCapacity) {
+    void setLeftCapacity(int leftCapacity) {
         this.leftCapacity = leftCapacity;
     }
 
-    public int getLeftCapacity() {
+    int getLeftCapacity() {
         return this.leftCapacity;
     }
 
-    public List<Student> getStudents() {
+    List<Student> getStudents() {
         return this.students;
     }
 
-    public List<Student> getAssignedStudents() {
+    List<Student> getAssignedStudents() {
         HashSet<Student> students = new HashSet<>();
         for (Project project : projects) {
             students.addAll(project.getStudents());
