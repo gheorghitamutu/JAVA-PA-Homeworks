@@ -1,4 +1,4 @@
-package lab07;
+package lab07.model;
 
 public class Source {
     public static void main(String args[]) {

@@ -1,4 +1,4 @@
-package lab07;
+package lab07.model;
 
 import java.io.IOException;
 import java.nio.file.Files;

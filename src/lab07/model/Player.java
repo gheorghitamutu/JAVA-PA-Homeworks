@@ -1,13 +1,13 @@
-package lab07;
+package lab07.model;
 
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Player implements Runnable {
     private String name;
     private Game game;
+    private Action word = null;
 
-    Player(String name)
+    public Player(String name)
     {
         this.name = name;
     }
@@ -16,13 +16,11 @@ public class Player implements Runnable {
         List extracted = game.getBag().extractLetters(1);
         if (extracted.isEmpty()) return false;
 
-        // build word
-        StringBuilder word = new StringBuilder();
-        IntStream.range(0, 10).forEachOrdered(n -> word.append(extracted.get(0)));
 
         // add word to board
-        game.getBoard().addWord(this, word.toString());
-        Thread.sleep(100);
+        game.getBoard().addWord(this, word.getMessage());
+        Thread.sleep(200);
+
         return true;
     }
 
@@ -52,5 +50,14 @@ public class Player implements Runnable {
     @Override
     public String toString() {
         return name;
+    }
+
+
+    public Action getWord() {
+        return word;
+    }
+
+    void setWord(Action word) {
+        this.word = word;
     }
 }
