@@ -1,18 +1,36 @@
 package lab08.server;
 
+import lab07.model.MyFTPClient;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.Instant;
 import java.util.Random;
 
 public class GuessingGame {
     private int attempts;
-    private String player = "";
+    private String player;
     private int random;
     private int max = 100;
+    private String localFile;
+    private String serverPath = "/ghita/GuessingGame/";
 
-    GuessingGame()
+    GuessingGame(String player)
     {
         System.out.println("New GuessingGame created!");
         this.attempts = 3;
         this.random = new Random().nextInt(max);
+        this.player = player;
+        this.localFile =
+                "stats_" +
+                player +
+                "_" +
+                Long.toString(Instant.now().getEpochSecond()) +
+                ".html";
+
+        System.out.println(localFile);
     }
 
     int getAttempts() {
@@ -73,6 +91,44 @@ public class GuessingGame {
     }
 
     String getWelcomeMessage() {
-        return "Welcome to the guessing game!";
+        return "Welcome to the guessing game " + this.player + "!";
+    }
+
+    void writeFile() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("<!DOCTYPE html>\n<html>\n<body>\n");
+
+        sb.append("<h1>You ").append((attempts > 0) ? "won" : "lost").append("!</h1>");
+
+        sb.append("<h2>Player name: ").append(player).append("</h2>");
+
+        sb.append("<h2>Attemps left: ").append(Integer.toString(attempts)).append("</h2>");
+
+        sb.append("<h2>Number was: ").append(Integer.toString(random)).append("</h2>");
+
+        sb.append("</body?</html>");
+
+        File file = new File(localFile);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            writer.write(sb.toString());
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void deleteFile() {
+        File file = new File(localFile);
+        if(file.delete()) {
+            System.out.println("Successfully deleted " + localFile + " file!");
+        }
+        else {
+            System.out.println("Failed to delete " + localFile + " file!");
+        }
+    }
+
+    void uploadFile() {
+        new MyFTPClient().uploadFile(localFile, serverPath + localFile);
     }
 }

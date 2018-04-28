@@ -80,7 +80,7 @@ public class ClientThread extends Thread {
             if (request != null && request.equals("stop")) {
                 try {
                     server.stop();
-                    return; // you force it to finish from a single client
+                    // return; // you force it to finish from a single client
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -94,6 +94,11 @@ public class ClientThread extends Thread {
                 }
             }
         }
+        try {
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     private String execute(String request) {
         if(request == null) {
@@ -103,11 +108,11 @@ public class ClientThread extends Thread {
         System.out.println("Server received the request " + request + "!");
 
         String command = request.split(" ")[0];
-        String message = "";
+        String message;
 
         switch(command) {
             case "create":
-                this.game = new GuessingGame();
+                this.game = new GuessingGame(this.socket.getLocalAddress().getHostAddress());
                 message = this.game.getWelcomeMessage();
                 break;
 
@@ -121,6 +126,11 @@ public class ClientThread extends Thread {
             case "quit":
                 if (this.game != null) {
                     message = this.game.quit();
+
+                    this.game.writeFile();
+                    this.game.uploadFile();
+                    this.game.deleteFile();
+
                     this.game = null;
                     this.running = false;
                 }
@@ -129,7 +139,7 @@ public class ClientThread extends Thread {
                 break;
 
             case "stop":
-                message = "The server will be shut down!";
+                message = "The server will be shut down after all games will finish!";
                 break;
 
             default:
@@ -140,6 +150,11 @@ public class ClientThread extends Thread {
         if ( this.game != null && this.game.getAttempts() == 0) {
             message += " " + this.game.quit();
             System.out.println("GuessingGame was lost!");
+
+            this.game.writeFile();
+            this.game.uploadFile();
+            this.game.deleteFile();
+
             this.game = null;
         }
 
