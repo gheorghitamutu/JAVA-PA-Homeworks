@@ -73,5 +73,6 @@
     </orderEntry>
     <orderEntry type="library" name="batik-all-1.9" level="project" />
     <orderEntry type="library" name="commons-net-3.6" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.46-bin" level="project" />
   </component>
 </module>
