@@ -1,7 +1,5 @@
 package lab08.server;
 
-import lab07.model.MyFTPClient;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -101,13 +99,13 @@ public class GuessingGame {
 
         sb.append("<h1>You ").append((attempts > 0) ? "won" : "lost").append("!</h1>");
 
-        sb.append("<h2>Player name: ").append(player).append("</h2>");
+        sb.append("<h2>PlayerHuman name: ").append(player).append("</h2>");
 
-        sb.append("<h2>Attemps left: ").append(Integer.toString(attempts)).append("</h2>");
+        sb.append("<h2>Attempts left: ").append(Integer.toString(attempts)).append("</h2>");
 
         sb.append("<h2>Number was: ").append(Integer.toString(random)).append("</h2>");
 
-        sb.append("</body?</html>");
+        sb.append("</body></html>");
 
         File file = new File(localFile);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {

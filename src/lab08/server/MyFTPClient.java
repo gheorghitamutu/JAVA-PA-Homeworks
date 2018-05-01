@@ -1,11 +1,11 @@
-package lab07.model;
+package lab08.server;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 
 import java.io.*;
 
-public class MyFTPClient
+class MyFTPClient
         extends FTP {
 
     private String server = "localhost";
@@ -15,7 +15,7 @@ public class MyFTPClient
 
     private FTPClient ftpClient = new FTPClient();
 
-    public MyFTPClient() {
+    MyFTPClient() {
 
         try {
             ftpClient.connect(server, port);
@@ -57,7 +57,7 @@ public class MyFTPClient
         }
     }
 
-    public void uploadFile(String localFile, String remoteFile) {
+    void uploadFile(String localFile, String remoteFile) {
         File firstLocalFile = new File(localFile);
 
         InputStream inputStream = null;

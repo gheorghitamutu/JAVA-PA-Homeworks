@@ -2,6 +2,7 @@ package lab07.model;
 
 class Action {
     private String message;
+    private boolean pass = true;
 
     synchronized void setMessage(String message) {
         this.message = message;
@@ -9,7 +10,7 @@ class Action {
     }
 
     synchronized String getMessage() {
-        while (message == null) {
+        while (message == null && pass) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -23,6 +24,15 @@ class Action {
     }
 
     synchronized void pass(){
+        this.message = "";
         notify();
+    }
+
+    public boolean isPass() {
+        return pass;
+    }
+
+    void setPass(boolean pass) {
+        this.pass = pass;
     }
 }
