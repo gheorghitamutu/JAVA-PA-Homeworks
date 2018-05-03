@@ -1,5 +1,5 @@
 // Author: Mutu Gheorghita
-// command line: java -cp "C:\Users\ghita\Documents\java-pa-homeworks\out\production\java-pa-homeworks"  Source 15
+// command line: java -cp "C:\Users\ghita\Documents\java-pa-homeworks\out\production\java-pa-homeworks"  MainWindow 15
 
 package lab01;
 
