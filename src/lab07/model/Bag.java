@@ -3,13 +3,13 @@ package lab07.model;
 import java.util.*;
 import java.util.stream.IntStream;
 
-class Bag {
+public class Bag {
     // https://en.wikipedia.org/wiki/Scrabble_letter_distributions#English
 
     private final Queue<Character> letters = new LinkedList<>();
     private final Map<Character, Integer> lettersValue = new HashMap<>();
 
-    Bag() {
+    public Bag() {
         // need a list in order to be able to shuffle it
         List<Character> lettersList = new ArrayList<>();
 
@@ -131,4 +131,9 @@ class Bag {
         return letters;
     }
 
+    public void clearBag() {
+        synchronized (letters) {
+            letters.clear();
+        }
+    }
 }

@@ -1,5 +1,7 @@
 package lab07.model;
 
+import java.util.List;
+
 public interface Player extends Runnable {
     boolean createSubmitWord() throws InterruptedException;
     void setGame(Game game);
@@ -9,8 +11,10 @@ public interface Player extends Runnable {
     String toString();
     Action getWord();
     void setWord(Action word);
-    void createWord();
+    boolean createWord(String input);
     String getPlayerType();
+    String getName();
+    int getScore();
     void pass();
     void extract();
 
@@ -23,5 +27,7 @@ public interface Player extends Runnable {
     boolean isItsTurn();
     void setTurn(boolean isItsTurn);
 
-    void extractMany();
+    void extractMany(String howMany);
+
+    List<Character> getLetters();
 }

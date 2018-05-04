@@ -1,11 +1,14 @@
 package lab07.model;
 
+import lab07.view.GameScene;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import static java.lang.Thread.sleep;
 
 public class PlayerAI implements Player {
 
@@ -22,9 +25,12 @@ public class PlayerAI implements Player {
     private boolean isAlive = false;
     private boolean isItsTurn = false;
 
-    PlayerAI()
+    private GameScene gm;
+
+    public PlayerAI(GameScene gm)
     {
         this.name = "AI_" + Integer.toString(new Random().nextInt(1000));
+        this.gm = gm;
     }
 
     public boolean createSubmitWord() throws InterruptedException {
@@ -39,10 +45,14 @@ public class PlayerAI implements Player {
             if (extractedLetters.isEmpty()) return true;
 
             // add word to board
-            game.getBoard().addWord(this, word.getMessage());
+            String wordToAdd = word.getMessage();
+            game.getBoard().addWord(this, wordToAdd);
+
+            // add to interface
+            gm.setWordRandomlyOnTheBoard(wordToAdd);
         }
 
-        Thread.sleep(100);
+        sleep(100);
 
         return false;
     }
@@ -55,7 +65,6 @@ public class PlayerAI implements Player {
     @Override
     public void run()
     {
-
         synchronized (System.out) {
             System.out.println("Thread created for " + name + "!");
         }
@@ -66,6 +75,7 @@ public class PlayerAI implements Player {
         {
             try {
                 bagEmpty = createSubmitWord();
+                sleep(6000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -91,7 +101,8 @@ public class PlayerAI implements Player {
         this.word = word;
     }
 
-    public void createWord() {
+    @Override
+    public boolean createWord(String input) {
         List<String> wordList = getCombinations(letters);
 
         String[] submittedWord = null;
@@ -124,6 +135,8 @@ public class PlayerAI implements Player {
         else {
             word.setMessage("");
         }
+
+        return true;
     }
 
     synchronized private static ArrayList<String> getCombinations(List<Character> letters) {
@@ -181,5 +194,18 @@ public class PlayerAI implements Player {
     }
 
     @Override
-    public void extractMany() {}
+    public void extractMany(String howMany) {}
+
+    @Override
+    public List<Character> getLetters() { return letters; }
+
+    @Override
+    public int getScore() {
+        return score;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
 }

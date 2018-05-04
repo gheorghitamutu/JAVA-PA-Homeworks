@@ -1,5 +1,7 @@
 package lab07.model;
 
+import javafx.scene.text.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,10 +14,14 @@ public class TimeKeeper implements Runnable {
     private List<Thread> playerThreads = new ArrayList<>();
 
     private int countDownTime = 10;
-
     private int seconds = 1;
 
     private long totalTime = 0;
+
+
+    private String gameTimeKeeperTextMessage = "Game takes {} seconds! <> has [] seconds to choose!";
+    private Text gtkt = null;
+    private Text utt = null;
 
     @Override
     public void run() {
@@ -27,8 +33,11 @@ public class TimeKeeper implements Runnable {
                         key.pass();
                         resetTimeKeeperCountDown(key);
                     } else {
-                        if(key.isItsTurn())
-                        key.decreaseCountDown();
+                        if (key.isItsTurn()) {
+                            if(key.getLetters().size() == 7)
+                                utt.setText(key.getLetters().toString());
+                            key.decreaseCountDown();
+                        }
                     }
                 });
 
@@ -43,12 +52,35 @@ public class TimeKeeper implements Runnable {
             }
 
             totalTime += 1;
+
+            if(gtkt != null) {
+                String message = gameTimeKeeperTextMessage.replace("{}", Long.toString(totalTime));
+                synchronized (countDown) {
+                    for (Map.Entry<Player, Integer> entry : countDown.entrySet()) {
+                        if (entry.getKey().isItsTurn()) {
+                            message = message.replace("<>", entry.getKey().toString());
+                            message = message.replace("[]", Integer.toString(entry.getValue()));
+                            break;
+                        }
+                    }
+
+                }
+                if(!message.contains("[]")) gtkt.setText(message);
+            }
+
             try {
                 sleep(seconds * 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+
+        String message = gameTimeKeeperTextMessage.replace("{}", Long.toString(totalTime));
+        message = message.replace("takes", "took");
+        message = message.replace(
+                "<> has [] seconds to choose!",
+                "Game over!");
+        gtkt.setText(message);
 
         synchronized (System.out) {
             System.out.println("Game took " + totalTime + " seconds!");
@@ -77,5 +109,17 @@ public class TimeKeeper implements Runnable {
 
     synchronized int getTimeLeft(Player player) {
         return countDown.get(player);
+    }
+
+    public void setGameTimeKeeperText(Text gameTimeKeeperText) {
+        this.gtkt = gameTimeKeeperText;
+    }
+
+    public synchronized void setUserTilesText(Text userTilesText) {
+        this.utt = userTilesText;
+    }
+
+    String getTotalTime() {
+        return Long.toString(totalTime);
     }
 }

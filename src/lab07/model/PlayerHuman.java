@@ -2,7 +2,6 @@ package lab07.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class PlayerHuman
         implements Player {
@@ -19,11 +18,11 @@ public class PlayerHuman
 
     private boolean isAlive = false;
 
-    private long score = 0;
+    private int score = 0;
 
-    private boolean isItsTurn = false;
+    private volatile boolean isItsTurn = false;
 
-    PlayerHuman(String name) {
+    public PlayerHuman(String name) {
         this.name = name;
     }
 
@@ -99,43 +98,23 @@ public class PlayerHuman
         this.word = word;
     }
 
-    public void createWord() {
-        synchronized (System.out) {
-            System.out.println("These are your tiles: " + letters);
+    public boolean createWord(String input) {
+        input = input.toLowerCase();
+        System.out.println("Word to check: " + input);
+        String w = game.getScrabbleDictionary().containsWordLetters(input);
+        for(char c : w.toCharArray()) {
+            score += game.getBag().getLetterValue(c);
+            letters.remove((Character)c);
         }
-        ConsoleInput con = new ConsoleInput(
-                1,
-                game.getTimeKeeper().getTimeLeft(this),
-                TimeUnit.SECONDS
-        );
-
-        String input = null;
-        try {
-            input = con.readLine();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        if(input == null) {
+        if(w.length() == 0)
             synchronized (System.out) {
-                System.out.println("Time's up!");
-            }
-            word.setMessage("");
-        }
-        else {
-            String w = game.getScrabbleDictionary().containsWordLetters(input);
-            for(char c : w.toCharArray()) {
-                score += game.getBag().getLetterValue(c);
-                letters.remove((Character)c);
-            }
-
-            if(w.length() == 0)
-                synchronized (System.out) {
                 System.out.println("This word does not exist!");
-            }
-
-            word.setMessage(w);
+                return false;
         }
+
+        word.setMessage(w);
+        isItsTurn = false;
+        return true;
     }
 
     public String getPlayerType() {
@@ -147,6 +126,7 @@ public class PlayerHuman
             word.setPass(false);
         }
         word.pass();
+        isItsTurn = false;
     }
 
     public void extract() {
@@ -162,43 +142,19 @@ public class PlayerHuman
         }
 
         word.setMessage("");
+        isItsTurn = false;
     }
 
     @Override
-    public void extractMany() {
-        int howMany = 0;
+    public void extractMany(String howMany) {
+        int extractMany;
+        if (!howMany.isEmpty()) extractMany = Integer.parseInt(howMany);
+        else return;
 
-        synchronized (System.out) {
-            System.out.println("How many letters do you want to extract?");
-        }
-
-        ConsoleInput con = new ConsoleInput(
-                1,
-                game.getTimeKeeper().getTimeLeft(this),
-                TimeUnit.SECONDS
-        );
-
-        String input = null;
-        try {
-            input = con.readLine();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        if(input == null) {
-            synchronized (System.out) {
-                System.out.println("Time's up!");
-            }
-        }
-        else {
-            howMany = Integer.parseInt(input);
-        }
-
-        for(int i = 0; i < howMany && i < letters.size(); i++) {
-            letters.remove(0);
-        }
+        for(int i = 0; i < extractMany && i < letters.size(); i++) letters.remove(0);
 
         extract();
+        isItsTurn = false;
     }
 
     public Game getGame() {
@@ -215,12 +171,30 @@ public class PlayerHuman
     }
 
     @Override
-    public boolean isItsTurn() {
+    synchronized public boolean isItsTurn() {
         return isItsTurn;
     }
 
     @Override
-    public void setTurn(boolean isItsTurn) {
+    synchronized public void setTurn(boolean isItsTurn) {
         this.isItsTurn = isItsTurn;
+    }
+
+    public synchronized List<Character> getLetters() {
+        return letters;
+    }
+
+    public synchronized void setLetters(List<Character> letters) {
+        this.letters = letters;
+    }
+
+    @Override
+    public int getScore() {
+        return score;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }

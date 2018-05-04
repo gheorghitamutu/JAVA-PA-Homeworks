@@ -1,12 +1,16 @@
 package lab07.model;
 
+import javafx.application.Platform;
+import lab07.view.EndGameScene;
+import lab07.view.MainWindow;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 
-class Game {
+public class Game implements Runnable {
+    private final MainWindow mw;
     private Bag bag;
     private Board board;
     private ScrabbleDictionary scrabbleDictionary = new ScrabbleDictionary();
@@ -17,13 +21,20 @@ class Game {
 
     private TimeKeeper tk = new TimeKeeper();
 
-    void addPlayer(Player player) {
+    private Player currentPlayer = null;
+
+    static String gameOver = "";
+
+    public void addPlayer(Player player) {
         players.add(player);
         player.setGame(this);
     }
 
-    void start()
-    {
+    public Game(MainWindow mw) {
+        this.mw = mw;
+    }
+
+    public void run() {
         players.forEach(player -> {
             Action word = new Action();
             words.add(word);
@@ -32,7 +43,6 @@ class Game {
             tk.addPlayer(player);
 
             playerThreads.add(new Thread(player));
-
 
             tk.addPlayerThread(playerThreads.get(playerThreads.size() - 1));
         });
@@ -43,85 +53,61 @@ class Game {
 
         boolean threadsAlive = true;
 
-        synchronized (words)
-        {
-            while(threadsAlive) {
+        synchronized (words) {
+            while (threadsAlive) {
                 players.forEach(player -> {
                     player.setTurn(true);
+                    currentPlayer = player;
 
-                    if(!player.getPlayerType().equals("AI")) {
-                        boolean isInputGood = false;
-                        while(!isInputGood) {
-                            synchronized (System.out) {
-                                System.out.println("What's your next action " + player.toString() + " ?");
-                            }
-                            ConsoleInput con = new ConsoleInput(
-                                    1,
-                                    player.getGame().getTimeKeeper().getTimeLeft(player),
-                                    TimeUnit.SECONDS
-                            );
-
-                            String input = null;
+                    if (!player.getPlayerType().equals("AI")) {
+                        while (player.isItsTurn()) {
                             try {
-                                input = con.readLine();
+                                sleep(1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-
-                            if(input == null) {
-                                isInputGood = true;
-                                synchronized (System.out) {
-                                    System.out.println("Time passed for " + player + "!");
-                                }
-                                player.pass();
-                                continue;
-                            }
-                            if(!input.equals("pass") &&
-                                    !input.equals("extract") &&
-                                    !input.equals("create")) continue;
-
-                            isInputGood = true;
-                            switch (input) {
-                                case "pass":
-                                    player.pass();
-                                    break;
-                                case "extract":
-                                    player.extractMany();
-                                    break;
-                                case "create":
-                                    player.createWord();
-                                    break;
-                            }
                         }
-                    }
-                    else {
-                        player.createWord();
+                    } else {
+                        try {
+                            sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        player.createWord("");
                     }
 
                     try {
                         sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                    }
-                    finally {
+                    } finally {
                         player.setTurn(false);
                     }
                 });
 
                 threadsAlive = false;
-                for(Thread player : playerThreads)
-                {
-                    if(player.isAlive()) threadsAlive = true;
+                for (Thread player : playerThreads) {
+                    if (player.isAlive()) threadsAlive = true;
                 }
             }
         }
+
+        EndGameScene.gameOver = "";
+        EndGameScene.gameOver = "Game Over!\n";
+        EndGameScene.gameOver += "Game took " + tk.getTotalTime() + " seconds!\n";
+        EndGameScene.gameOver += players.get(0).getName() + "\'s score is: " + players.get(0).getScore() + "!\n";
+        EndGameScene.gameOver += players.get(1).getName() + "\'s score is: " + players.get(1).getScore() + "!\n";
+        EndGameScene.gameOver += players.get(2).getName() + "\'s score is: " + players.get(2).getScore() + "!\n";
+        EndGameScene.gameOver += players.get(3).getName() + "\'s score is: " + players.get(3).getScore() + "!\n";
+
+        Platform.runLater(mw::setEndStage);
     }
 
-    Bag getBag() {
+    public Bag getBag() {
         return bag;
     }
 
-    void setBag(Bag bag) {
+    public void setBag(Bag bag) {
         this.bag = bag;
     }
 
@@ -129,7 +115,7 @@ class Game {
         return board;
     }
 
-    void setBoard(Board board) {
+    public void setBoard(Board board) {
         this.board = board;
     }
 
@@ -141,7 +127,15 @@ class Game {
         this.scrabbleDictionary = scrabbleDictionary;
     }
 
-    TimeKeeper getTimeKeeper() {
+    public TimeKeeper getTimeKeeper() {
         return tk;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
     }
 }

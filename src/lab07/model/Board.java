@@ -3,7 +3,7 @@ package lab07.model;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Board {
+public class Board {
     private final int boardSize = 15;
     private final Queue<String> words = new LinkedList<>();
 

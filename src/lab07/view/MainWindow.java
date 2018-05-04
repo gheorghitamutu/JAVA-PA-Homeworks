@@ -5,7 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -14,8 +16,18 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lab07.model.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainWindow extends Application {
+
+    Stage stage = null;
+    GameScene currentGameScene = null;
+    Game game = new Game(this);
+
+    private Thread gameThread = null;
 
     private Color sceneColor = Color.CADETBLUE;
     private Color buttonColor = Color.IVORY;
@@ -73,7 +85,16 @@ public class MainWindow extends Application {
         }));
 
         // exit event
-        exitButton.setOnMouseClicked((event -> System.exit(0)));
+        exitButton.setOnMouseClicked((event -> {
+            Alert alert = new Alert(
+                    Alert.AlertType.CONFIRMATION,
+                    "Quit game?",
+                    ButtonType.YES,
+                    ButtonType.NO);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.YES) System.exit(0);
+        }));
 
         //Setting the text object as a node to the group object
         mainSceneObjectsList.addAll(welcomeText, playButton, exitButton);
@@ -144,15 +165,28 @@ public class MainWindow extends Application {
 
         // play event
         usersPlayGameButton.setOnMouseClicked((event -> {
-            // should change the stage here
-            System.out.println(player01TextField.getText().length() == 0 ? "AI Player!" : player01TextField.getText());
+            game = new Game(this);
+            game.setBag(new Bag());
+            game.setBoard(new Board());
+
+            currentGameScene = new GameScene(this, game.getTimeKeeper());
+            stage.setScene(currentGameScene.getGameScene());
+            // get player names
+            List<String> playersName = new ArrayList<>();
+            playersName.add(player01TextField.getText().length() == 0 ? "AI" : player01TextField.getText());
             player01TextField.clear();
-            System.out.println(player02TextField.getText().length() == 0 ? "AI Player!" : player02TextField.getText());
+            playersName.add(player02TextField.getText().length() == 0 ? "AI" : player02TextField.getText());
             player02TextField.clear();
-            System.out.println(player03TextField.getText().length() == 0 ? "AI Player!" : player03TextField.getText());
+            playersName.add(player03TextField.getText().length() == 0 ? "AI" : player03TextField.getText());
             player03TextField.clear();
-            System.out.println(player04TextField.getText().length() == 0 ? "AI Player!" : player04TextField.getText());
+            playersName.add(player04TextField.getText().length() == 0 ? "AI" : player04TextField.getText());
             player04TextField.clear();
+
+            playersName.forEach(player ->
+                    game.addPlayer(player.equals("AI") ? new PlayerAI(currentGameScene) : new PlayerHuman(player)));
+
+            gameThread = new Thread(game);
+            gameThread.start();
         }));
 
         //Creating a users text
@@ -228,8 +262,26 @@ public class MainWindow extends Application {
         usersScene.setFill(sceneColor);
     }
 
+    public void setUsersScene() {
+        stage.setScene(usersScene);
+    }
+
+    void setMainScene() {
+        stage.setScene(mainScene);
+    }
+
+    Thread getGameThread() {
+        return gameThread;
+    }
+
+    public void setGameThread(Thread gameThread) {
+        this.gameThread = gameThread;
+    }
+
     @Override
     public void start(Stage stage) {
+        this.stage = stage;
+
         setMainSceneElements(stage);
         setUsersSceneElements(stage);
 
@@ -239,11 +291,15 @@ public class MainWindow extends Application {
         //Adding the mainScene to Stage
         stage.setScene(mainScene);
 
-        //Displaying the contents of the stage
+        //Displaying the contents of the mw
         stage.show();
     }
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void setEndStage() {
+        stage.setScene(new EndGameScene(this).getEndScene());
     }
 }
