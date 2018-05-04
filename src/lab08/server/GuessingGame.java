@@ -14,8 +14,10 @@ public class GuessingGame {
     private int max = 100;
     private String localFile;
     private String serverPath = "/ghita/GuessingGame/";
+    private TimeKeeper tk = null;
+    private ClientThread ct = null;
 
-    GuessingGame(String player)
+    GuessingGame(String player, ClientThread ct)
     {
         System.out.println("New GuessingGame created!");
         this.attempts = 3;
@@ -29,6 +31,12 @@ public class GuessingGame {
                 ".html";
 
         System.out.println(localFile);
+
+        this.ct = ct;
+
+        tk = new TimeKeeper(this);
+        Thread tkThread = new Thread(tk);
+        tkThread.start();
     }
 
     int getAttempts() {
@@ -67,6 +75,7 @@ public class GuessingGame {
         String message;
 
         if (attempts > 0) {
+            tk.resetTimeout();
 
             if (number < random)
                 message = "Too small!";
@@ -128,5 +137,13 @@ public class GuessingGame {
 
     void uploadFile() {
         new MyFTPClient().uploadFile(localFile, serverPath + localFile);
+    }
+
+    public ClientThread getCt() {
+        return ct;
+    }
+
+    public void setCt(ClientThread ct) {
+        this.ct = ct;
     }
 }

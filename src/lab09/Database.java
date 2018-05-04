@@ -7,8 +7,8 @@ import java.sql.SQLException;
 class Database {
     private static final String DB_NAME = "MusicAlbums";
     private static final int PORT = 3306;
-    // connect first without SSL param if invalid key error
-    private static final String URL = "jdbc:mysql://localhost:" + PORT + "/" + DB_NAME + "?useSSL=false&relaxAutoCommit=true";
+    // connect first without SSL param if invalid key error --> useSSL=false&
+    private static final String URL = "jdbc:mysql://localhost:" + PORT + "/" + DB_NAME + "?relaxAutoCommit=true";
     private static final String USER = "dba";
     private static final String PASSWORD = "sql";
     private static Connection connection = null;

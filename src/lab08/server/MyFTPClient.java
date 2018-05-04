@@ -16,7 +16,6 @@ class MyFTPClient
     private FTPClient ftpClient = new FTPClient();
 
     MyFTPClient() {
-
         try {
             ftpClient.connect(server, port);
             System.out.println("Connected to ftp server!");

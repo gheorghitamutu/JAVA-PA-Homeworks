@@ -100,7 +100,7 @@ public class ClientThread extends Thread {
             e.printStackTrace();
         }
     }
-    private String execute(String request) {
+    public String execute(String request) {
         if(request == null) {
             return "Disconnected from the server!";
         }
@@ -112,7 +112,7 @@ public class ClientThread extends Thread {
 
         switch(command) {
             case "create":
-                this.game = new GuessingGame(this.socket.getLocalAddress().getHostAddress());
+                this.game = new GuessingGame(this.socket.getLocalAddress().getHostAddress(), this);
                 message = this.game.getWelcomeMessage();
                 break;
 
