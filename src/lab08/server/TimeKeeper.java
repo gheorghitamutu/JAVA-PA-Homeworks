@@ -1,11 +1,12 @@
 package lab08.server;
 
 public class TimeKeeper implements Runnable {
-    private GuessingGame gg = null;
-    private Integer timeout = 4;
+    private GuessingGame guessingGame;
+    private Integer timeout = 10;
 
-    TimeKeeper(GuessingGame gg) {
-        this.gg = gg;
+    TimeKeeper(GuessingGame guessingGame) {
+        this.guessingGame = guessingGame;
+        this.resetTimeout();
     }
 
     @Override
@@ -18,11 +19,16 @@ public class TimeKeeper implements Runnable {
                 sleep(1000);
             }
             System.out.println("Time's up!");
-            gg.setAttempts(0);
+            guessingGame.setAttempts(0);
         }
     }
 
-    private void sleep(int i) {
+    private void sleep(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public long getTimeout() {

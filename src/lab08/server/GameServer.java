@@ -16,7 +16,7 @@ public class GameServer {
         try {
             server.waitForClients(); //... handle the exceptions!
         } catch (IOException e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
 
         System.out.println("Server closed!");

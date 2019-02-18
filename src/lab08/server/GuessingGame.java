@@ -14,28 +14,23 @@ public class GuessingGame {
     private int max = 100;
     private String localFile;
     private String serverPath = "/ghita/GuessingGame/";
-    private TimeKeeper tk = null;
-    private ClientThread ct = null;
+    private TimeKeeper timeKeeper;
+    private ClientThread clientThread;
 
-    GuessingGame(String player, ClientThread ct)
+    GuessingGame(String player, ClientThread clientThread)
     {
         System.out.println("New GuessingGame created!");
         this.attempts = 3;
         this.random = new Random().nextInt(max);
         this.player = player;
-        this.localFile =
-                "stats_" +
-                player +
-                "_" +
-                Long.toString(Instant.now().getEpochSecond()) +
-                ".html";
+        this.localFile = "stats_" + player + "_" + Instant.now().getEpochSecond() + ".html";
 
         System.out.println(localFile);
 
-        this.ct = ct;
+        this.clientThread = clientThread;
 
-        tk = new TimeKeeper(this);
-        Thread tkThread = new Thread(tk);
+        timeKeeper = new TimeKeeper(this);
+        Thread tkThread = new Thread(timeKeeper);
         tkThread.start();
     }
 
@@ -75,7 +70,7 @@ public class GuessingGame {
         String message;
 
         if (attempts > 0) {
-            tk.resetTimeout();
+            timeKeeper.resetTimeout();
 
             if (number < random)
                 message = "Too small!";
@@ -88,6 +83,7 @@ public class GuessingGame {
         }
         else {
             message = "You lost! In order to play, you need to create another game!";
+            timeKeeper.setTimeout(0);
         }
 
         return message;
@@ -110,9 +106,9 @@ public class GuessingGame {
 
         sb.append("<h2>PlayerHuman name: ").append(player).append("</h2>");
 
-        sb.append("<h2>Attempts left: ").append(Integer.toString(attempts)).append("</h2>");
+        sb.append("<h2>Attempts left: ").append(attempts).append("</h2>");
 
-        sb.append("<h2>Number was: ").append(Integer.toString(random)).append("</h2>");
+        sb.append("<h2>Number was: ").append(random).append("</h2>");
 
         sb.append("</body></html>");
 
@@ -139,11 +135,11 @@ public class GuessingGame {
         new MyFTPClient().uploadFile(localFile, serverPath + localFile);
     }
 
-    public ClientThread getCt() {
-        return ct;
+    public ClientThread getClientThread() {
+        return clientThread;
     }
 
-    public void setCt(ClientThread ct) {
-        this.ct = ct;
+    public void setClientThread(ClientThread clientThread) {
+        this.clientThread = clientThread;
     }
 }
